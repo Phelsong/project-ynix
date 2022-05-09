@@ -1,8 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import React from "react";
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+import "./Style/index.css"
+import {Main, ControlBar} from "./Components"
 //----------------------------------------------------------------
 const App = () => {
-    return (<span>"React App"</span>)
+//----------------------------------------------------------------
+
+
+//----------------------------------------------------------------
+    return(
+        <>  
+            <ControlBar />
+            <Main/>
+        </>
+    )
 }
 //----------------------------------------------------------------
 export default App;

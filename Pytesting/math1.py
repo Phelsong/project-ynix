@@ -19,4 +19,5 @@ def hit_rate():
     
     dodge_rate = effective_evasion - effective_acc + min_dodge
     #if over 0
-    
+
+

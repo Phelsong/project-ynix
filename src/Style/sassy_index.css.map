@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,IAAI,CAAJ,mDAAI;AACJ,IAAI,CAAJ,gDAAI;AACJ,mFAAmF;AACnF,IAAI,CAAJ,oBAAI;AAOJ,kFAAkF;AAClF,IAAI,CAAJ,iCAAI",
+    "sources": [
+        "sassy_index.scss"
+    ],
+    "names": [],
+    "file": "sassy_index.css"
+}

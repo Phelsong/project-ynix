@@ -7,12 +7,12 @@ const createWindow = () => {
         width: 1200,
         height: 900,
         webPreferences: {
-          preload: path.join(__dirname, 'preload.js')
+          preload: path.join(__dirname, '../preload.js')
         }
       })
-    
+      
       win.loadURL('http://localhost:3000/')
-      // win.loadURL(`file://${path.join(__dirname, '../build/index.html')}`)
+      // win.loadURL(`file:${path.join(__dirname, '../build/index.html')}`)
 }
 
 //----------------------------------------------------------------
