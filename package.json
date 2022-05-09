@@ -5,9 +5,14 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron-forge start",
+    "react-start": "react-scripts start",
+    "electron:dev": "electron .",
+    "build": "react-scripts build",
+    "start": "electron .",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "build -c.extraMetadata.main=build/Main.js"
   },
   "keywords": [],
   "author": "",
@@ -18,16 +23,19 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.63",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "electron": "^18.0.1"
+    "electron": "^18.2.0",
+    "electron-builder": "^23.0.3"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-scripts": "^5.0.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "^5.0.1",
     "uikit": "^3.14.1"
   },
   "config": {
+    "homepage": "./",
     "forge": {
       "packagerConfig": {},
       "makers": [
@@ -53,5 +61,17 @@
         }
       ]
     }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
