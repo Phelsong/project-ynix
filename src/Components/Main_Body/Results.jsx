@@ -10,7 +10,8 @@ const Results = () => {
 //----------------------------------------------------------------
     return (
     <div className="results-container">
-    <progress class="uk-progress" value="" max=""></progress>
+        Results
+    <progress className="uk-progress" value="" max=""></progress>
     </div>) 
 }
 //----------------------------------------------------------------
