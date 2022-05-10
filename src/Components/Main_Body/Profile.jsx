@@ -1,7 +1,7 @@
 import React from 'react';
 //----------------------------------------------------------------
 //----------------------------------------------------------------
-const Results = () => {
+const Profile = () => {
 //----------------------------------------------------------------
 
 
@@ -9,13 +9,11 @@ const Results = () => {
 
 //----------------------------------------------------------------
     return (
-    <div className="results-container">
-        Results
-    <progress className="uk-progress" value="50" max="100"></progress>
-    <span className="uk-label uk-label-warning">Error</span>
-    <span className="uk-label uk-label-success">Success!</span>
+    <div className="profile-container">
+        Profile
+   
     </div>) 
 }
 //----------------------------------------------------------------
-export default Results;
+export default Profile;
 

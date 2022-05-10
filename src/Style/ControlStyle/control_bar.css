@@ -1,0 +1,15 @@
+.control-bar-container {
+  height: 100vh;
+  width: 4rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 1rem;
+}
+
+.nav-icon {
+  height: 4rem;
+  width: 4rem;
+}
+/*# sourceMappingURL=control_bar.css.map */

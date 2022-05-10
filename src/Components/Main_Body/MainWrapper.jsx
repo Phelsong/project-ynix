@@ -1,7 +1,7 @@
 import React, {lazy} from 'react';
 import { Route, Routes } from "react-router-dom";
 //----------------------------------------------------------------
-import {Home, SimSettings, Results} from "../index"
+import {Home, SimSettings, Results, Profile} from "../index"
 //----------------------------------------------------------------
 const MainWrapper = () => {
 //----------------------------------------------------------------
@@ -16,6 +16,7 @@ const MainWrapper = () => {
             <Route path='/' element={<Home />} />
             <Route path='/SimSettings' element={<SimSettings />} />
             <Route path='/Results' element={<Results />} />
+            <Route path='/Profile' element={<Profile />} />
         </Routes>
     </div>) 
 }

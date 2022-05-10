@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+
 //----------------------------------------------------------------
 const ControlBar = () => {
 //----------------------------------------------------------------
@@ -9,9 +10,10 @@ const ControlBar = () => {
 //----------------------------------------------------------------
     return (
     <div className="control-bar-container">
-        <Link to='/' className="uk-button uk-button-default">Home</Link>
-        <Link to='/SimSettings' className="uk-button uk-button-default">SimSettings</Link>
-        <Link to='/Results' className="uk-button uk-button-default">Results</Link>
+        <Link to='/' uk-icon="home" className="nav-icon"/>
+        <Link to='/SimSettings'  uk-icon="code" className="nav-icon"/>
+        <Link to='/Results' uk-icon="happy" className="nav-icon"/>
+        <Link to='/Profile' uk-icon="user" className="nav-icon"/>
     </div>)
 }
 //----------------------------------------------------------------

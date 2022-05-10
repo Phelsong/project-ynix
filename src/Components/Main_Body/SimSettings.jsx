@@ -11,6 +11,7 @@ const SimSettings = () => {
     return (
     <div className="sim-settings-container">
      SimSettings
+     
     </div>) 
 }
 //----------------------------------------------------------------
