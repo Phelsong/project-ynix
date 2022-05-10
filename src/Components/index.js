@@ -1,15 +1,7 @@
 export { default as Home } from './Main_Body/Home/Home'
-//----------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
+export { default as SimSettings } from './Main_Body/SimSettings'
+export { default as Results } from './Main_Body/Results'
+export { default as UserSettings } from './Main_Body/UserSettings'
 
 
 
