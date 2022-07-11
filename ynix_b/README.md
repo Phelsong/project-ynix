@@ -1,4 +1,4 @@
 Logic layer and backend implementation
 
-Django
+Fast API
 Postgres
