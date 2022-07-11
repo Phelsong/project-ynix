@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-start": "react-scripts start",
+    "py-start": "uvicorn main:app --reload",
     "electron:dev": "electron .",
     "build": "react-scripts build",
     "start": "electron .",
