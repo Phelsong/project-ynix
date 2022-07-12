@@ -25,4 +25,8 @@ app.add_middleware(
 def read_root():
     return {"You've Got": "Py"}
 # -----------------------------------------------------------------------------
+@app.get("/classes/:class")
+def get_class(class_name):
+    return {"You've Got": class_name}
 
+# -----------------------------------------------------------------------------
