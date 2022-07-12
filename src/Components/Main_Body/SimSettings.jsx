@@ -61,8 +61,8 @@ const SimSettings = () => {
         <input type="text" />
       </form>
       <form className="sim-settings">
-        // This probably needs to be broken out into a seperate component, revisit latter ****
-        Class
+        {/* This probably needs to be broken out into a seperate component, revisit latter **** */}
+        Attacker - Class
         <select type="dropdown">
           <option value="1">Warrior</option>
           <option value="2">Ranger</option>
@@ -90,6 +90,7 @@ const SimSettings = () => {
           <option value="24">Drakania</option>
         </select>
       </form>
+
     </div>
   );
 };
