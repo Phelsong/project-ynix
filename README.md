@@ -4,10 +4,10 @@ Developer: Josh S Wilkinson - `http://joshsw.dev`
 
 ## _Stack:_
 
-* Electron Core
+* Electron
 * UiKit
 * React
-* Django
+* Fast Api
 * Postgres
 
 ## Languages
