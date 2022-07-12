@@ -90,7 +90,6 @@ const SimSettings = () => {
           <option value="24">Drakania</option>
         </select>
       </form>
-
     </div>
   );
 };
