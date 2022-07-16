@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 //----------------------------------------------------------------
+
 //----------------------------------------------------------------
 const SimSettings = () => {
   //----------------------------------------------------------------
-
+  const navTo = useNavigate();
   //----------------------------------------------------------------
   return (
     <div className="sim-settings-container">
@@ -90,6 +92,7 @@ const SimSettings = () => {
           <option value="24">Drakania</option>
         </select>
       </form>
+      <button className="btn btn-primary" onClick={e => navTo('/Results')}> Run </button>
     </div>
   );
 };

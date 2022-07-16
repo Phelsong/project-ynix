@@ -8,7 +8,7 @@ const Home = () => {
 
 //----------------------------------------------------------------
     return (
-    <div className="Home"> Welcome to Project_Ynix!</div>)
+    <div className="Home"> <h1>Welcome to Project_Ynix!</h1></div>)
 }
 //----------------------------------------------------------------
 export default Home;
