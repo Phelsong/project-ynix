@@ -24,19 +24,23 @@ defender = {
     'evasion_combat_buffs': 0,
     'evasion_debuffs': 0
 }
-hit1=8.89
+hit1 = 8.89
 hit1_count = 29
 
-t_ap = attacker['ap'] + attacker['monster_ap'] + (attacker['human_damage'] * 1.6) + attacker['ap_combat_buffs'] - attacker['ap_debuffs']
+t_ap = attacker['ap'] + attacker['monster_ap'] + \
+    (attacker['human_damage'] * 1.6) + \
+    attacker['ap_combat_buffs'] - attacker['ap_debuffs']
 
-t_acc_rate = attacker['acc_rate']+ attacker['acc_combat_buffs'] + (attacker['acc'] * .21) - attacker['acc_debuffs']
+t_acc_rate = attacker['acc_rate'] + attacker['acc_combat_buffs'] + \
+    (attacker['acc'] * .21) - attacker['acc_debuffs']
 
 t_dr = defender['dr'] + defender['dr_combat_buffs'] - defender['dr_debuffs']
 
-t_evasion_rate = defender['evasion_rate'] + (defender['evasion'] * .21) + defender['evasion_combat_buffs'] - defender['evasion_debuffs']
+t_evasion_rate = defender['evasion_rate'] + (defender['evasion'] * .21) + \
+    defender['evasion_combat_buffs'] - defender['evasion_debuffs']
 
 unmitigated_damage = t_ap-t_dr
-hit_damage = unmitigated_damage * hit1 + dr
+hit_damage = unmitigated_damage * hit1 + defender['dr']
 
 print("mean hit is:", hit_damage)
 print("total possible skill hit1 damage is:", hit_damage * hit1_count)
