@@ -1,4 +1,4 @@
-Attacker = {
+attacker = {
     'ap': 0,
     'aap': 0,
     'acc': 0,
@@ -14,7 +14,7 @@ Attacker = {
     'acc_combat_buffs': 0,
     'acc_debuffs': 0,
 }
-Defender = {
+defender = {
     'dr': 0,
     'dr_rate': 0,
     'evasion': 0,
@@ -24,14 +24,16 @@ Defender = {
     'evasion_combat_buffs': 0,
     'evasion_debuffs': 0
 }
+hit1=8.89
+hit1_count = 29
 
-t_ap = attacker_ap + monster_ap + (human_damage * 1.6) + ap_combat_buffs - ap_debuffs
+t_ap = attacker['ap'] + attacker['monster_ap'] + (attacker['human_damage'] * 1.6) + attacker['ap_combat_buffs'] - attacker['ap_debuffs']
 
-t_acc_rate = acc_rate + acc_combat_buffs + (acc * .21) - acc_debuffs
+t_acc_rate = attacker['acc_rate']+ attacker['acc_combat_buffs'] + (attacker['acc'] * .21) - attacker['acc_debuffs']
 
-t_dr = dr + dr_combat_buffs - dr_debuffs
+t_dr = defender['dr'] + defender['dr_combat_buffs'] - defender['dr_debuffs']
 
-t_evasion_rate = evasion_rate + (evasion * .21) + evasion_combat_buffs - evasion_debuffs
+t_evasion_rate = defender['evasion_rate'] + (defender['evasion'] * .21) + defender['evasion_combat_buffs'] - defender['evasion_debuffs']
 
 unmitigated_damage = t_ap-t_dr
 hit_damage = unmitigated_damage * hit1 + dr
