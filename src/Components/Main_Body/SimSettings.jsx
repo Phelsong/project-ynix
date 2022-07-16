@@ -63,13 +63,14 @@ const SimSettings = () => {
         evasion debuffs
         <input type="text" />
       </form>
-      <form className="sim-settings">
+      <form className="class-choice-form">
         Attacker - Class
        <ClassDropdown />
        Defender - PvP
        <ClassDropdown />
+       <button className="btn btn-primary" onClick={e => navTo('/Results')}> Run </button>
       </form>
-      <button className="btn btn-primary" onClick={e => navTo('/Results')}> Run </button>
+     
     </div>
   );
 };
