@@ -6,9 +6,6 @@ import {Home, SimSettings, Results, Profile} from "../index"
 const MainWrapper = () => {
 //----------------------------------------------------------------
 
-
-
-
 //----------------------------------------------------------------
     return (
     <div className="Main-Components">
