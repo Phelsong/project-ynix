@@ -3,7 +3,8 @@ from Index import *
 
 def drop_tables():
     cursor.execute('''DROP TABLE IF EXISTS users;
-                   DROP TABLE IF EXISTS classes''')
+                   DROP TABLE IF EXISTS classes;
+                   DROP TABLE IF EXISTS class_skills;''')
 
 def create_tables():
     cursor.execute('''CREATE TABLE users 
@@ -13,6 +14,11 @@ def create_tables():
     cursor.execute('''CREATE TABLE classes
                     (id serial PRIMARY KEY
                     , name varchar(150))''')
+    cursor.execute('''CREATE TABLE class_skills,
+                   skill_name varchar(200),
+                   skill_acc int,
+                   skill_details JSONB;
+                   ''')
 
 def class_seed():
     cursor.execute('''INSERT INTO classes (id, name)
@@ -29,9 +35,9 @@ def class_seed():
         (10, 'Ninja'),
         (11, 'Wizard'),
         (12, 'Witch'),
-        (13, 'Mystic'),
+        (13, 'Dark Knight'),
         (14, 'Striker'),
-        (15, 'Dark Knight'),
+        (15, 'Mystic'),
         (16, 'Lahn'),
         (17, 'Archer'),
         (18, 'Shai'),
