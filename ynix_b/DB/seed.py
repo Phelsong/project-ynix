@@ -7,7 +7,6 @@ def drop_tables():
                    DROP TABLE IF EXISTS classes;
                    DROP TABLE IF EXISTS class_skills;''')
 
-
 def create_tables():
     cursor.execute('''CREATE TABLE users 
                     (user_id serial PRIMARY KEY
@@ -23,7 +22,6 @@ def create_tables():
                    skill_acc INT NOT NULL,
                    skill_details JSONB);
                    ''')
-
 
 def class_seed():
     cursor.execute('''INSERT INTO classes (class_id, class_name)
