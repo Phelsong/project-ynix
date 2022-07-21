@@ -1,8 +1,8 @@
 import random
-#----------------------------------------------------------------
+# ----------------------------------------------------------------
 attacker = {
     'ap': 0,
-    'ap_range': self.ap - 6 + random.randrange(1,12),
+    # 'ap_range': self.ap - 6 + random.randrange(1,12),
     'aap': 0,
     'acc': 0,
     'acc_rate': 0,
@@ -40,5 +40,3 @@ t_dr = defender['dr'] + defender['dr_combat_buffs'] - defender['dr_debuffs']
 
 t_evasion_rate = defender['evasion_rate'] + (defender['evasion'] * .21) + \
     defender['evasion_combat_buffs'] - defender['evasion_debuffs']
-
-
