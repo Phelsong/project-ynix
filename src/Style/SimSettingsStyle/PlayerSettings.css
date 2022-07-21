@@ -1,0 +1,34 @@
+.player-settings-container {
+  padding: 1.3rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.player-settings-form {
+  min-width: 12rem;
+  margin: 1rem auto;
+  padding: .3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.defender-settings-form {
+  min-width: 12rem;
+  margin: 1rem auto;
+  padding: .3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+/*# sourceMappingURL=PlayerSettings.css.map */

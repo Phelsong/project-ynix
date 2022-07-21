@@ -1,5 +1,6 @@
 .sim-settings-container {
-  padding: 1.3rem;
+  min-width: 70rem;
+  padding: 1.5rem;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
