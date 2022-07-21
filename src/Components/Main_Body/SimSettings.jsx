@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import {ClassDropdown, PlayerInputForm, DefenderForm} from "../index"
+import { ClassDropdown, PlayerInputForm, DefenderForm } from "../index";
 //----------------------------------------------------------------
 
 //----------------------------------------------------------------
@@ -10,11 +10,27 @@ const SimSettings = () => {
   //----------------------------------------------------------------
   return (
     <div className="sim-settings-container">
-      <h1> Simulation Settings</h1>
-      <switch type="checkbox" toggle/>
+      <switch type="checkbox" toggle />
+      <button
+        className="uk-button"
+        type="button"
+        uk-toggle="target: .player-settings-container"
+      >
+        Player Input
+      </button>
       <PlayerInputForm className="sim-settings-form" />
+      <button
+        className="uk-button"
+        type="button"
+        uk-toggle="target: .defender-settings-form, .class-choice-form"
+      >
+        Defender
+      </button>
       <DefenderForm className="sim-settings-form" />
-      <button className="btn btn-primary" onClick={e => navTo('/Results')}> Run </button>
+      <button className="btn btn-primary" onClick={(e) => navTo("/Results")}>
+        {" "}
+        Run{" "}
+      </button>
     </div>
   );
 };

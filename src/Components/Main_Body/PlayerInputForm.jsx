@@ -9,7 +9,8 @@ const PlayerInputForm = () => {
   //----------------------------------------------------------------
   return (
     <div className="player-settings-container">
-      Attacker
+      Attacker - Class
+       <ClassDropdown />
       <form className="player-settings-form">
         ap
         <input type="text" />
@@ -44,8 +45,6 @@ const PlayerInputForm = () => {
         accuracy debuffs
         <input type="text" />
       </form>
-      Attacker - Class
-       <ClassDropdown />
     </div>
   );
 };

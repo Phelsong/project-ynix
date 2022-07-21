@@ -8,7 +8,7 @@ const DefenderForm = () => {
   const navTo = useNavigate();
   //----------------------------------------------------------------
   return (
-    <div className="container">
+    <div className="defender-container">
       <form className="defender-settings-form">
         defender dr
         <input type="text" />
