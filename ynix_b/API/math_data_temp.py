@@ -1,15 +1,15 @@
 import random
 # ----------------------------------------------------------------
 attacker = {
-    'ap': 0,
+    'ap': 532,
     # 'ap_range': self.ap - 6 + random.randrange(1,12),
     'aap': 0,
     'acc': 0,
     'acc_rate': 0,
-    'monster_ap': 0,
+    'monster_ap': 165,
     'kama_damage': 0,
     'demi_damage': 0,
-    'human_damage': 0,
+    'human_damage': 45,
     'crit_damage': 0,
     'back_damage': 0,
     'ap_combat_buffs': 0,
@@ -18,7 +18,7 @@ attacker = {
     'acc_debuffs': 0,
 }
 defender = {
-    'dr': 0,
+    'dr': 750,
     'dr_rate': 0,
     'evasion': 0,
     'evasion_rate': 0,
