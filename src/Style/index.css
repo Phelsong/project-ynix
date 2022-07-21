@@ -16,3 +16,4 @@ body * {
 @import "./ControlStyle/control_bar.css";
 @import "./ResultsStyle/Results.css";
 @import "./SimSettingsStyle/SimSettings.css";
+@import "./SimSettingsStyle/PlayerSettings.css"

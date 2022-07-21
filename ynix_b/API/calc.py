@@ -6,6 +6,7 @@ human_damage = attacker['human_damage']
 damage_mean = t_ap-t_dr
 human_ap_mean = 0
 
+#damage is .5 under DR, while 2.0 over
 if damage_mean > 0:
     damage_mean += human_damage * 2
 elif damage_mean < 0:
@@ -28,13 +29,15 @@ if damage_low > 0:
     damage_low += human_damage * 2
 elif damage_low < 0:
     hd_temp = (human_damage - abs(damage_low)/2)
-    human_ap_low = hd_temp*2 + abs(damage_low) /2 if hd_temp > 0 else human_damage/2
+    human_ap_low = hd_temp*2 + abs(damage_low) / \
+        2 if hd_temp > 0 else human_damage/2
 
 if damage_high > 0:
     damage_high += human_damage * 2
 elif damage_high < 0:
     hd_temp = (human_damage - abs(damage_high)/2)
-    human_ap_high = hd_temp*2 + abs(damage_high)/2 if hd_temp > 0 else human_damage/2
+    human_ap_high = hd_temp*2 + \
+        abs(damage_high)/2 if hd_temp > 0 else human_damage/2
 
 e_ap_low = damage_low + human_ap_low
 e_ap_high = damage_high + human_ap_high
@@ -43,8 +46,7 @@ hit_damage_low = (e_ap_low * hit1 + t_ap + human_ap_low if e_ap_low >
                   0 else t_ap + human_ap_low)*.8
 
 hit_damage_high = (e_ap_high * hit1 + t_ap + human_ap_high if e_ap_high >
-                  0 else t_ap + human_ap_high)*.8
-
+                   0 else t_ap + human_ap_high)*.8
 # ----------------------------------------------------------------
 # random
 

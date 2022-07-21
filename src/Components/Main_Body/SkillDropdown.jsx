@@ -1,24 +1,15 @@
 import React from "react";
-import { UserSettings } from "../index";
 //----------------------------------------------------------------
 //----------------------------------------------------------------
-const Profile = () => {
+const SkillDropdown = () => {
   //----------------------------------------------------------------
-
+  const testSkill = 1
   //----------------------------------------------------------------
   return (
-    <div className="profile-container">
-      Profile
-      <button
-        className="uk-button"
-        type="button"
-        uk-toggle="target: .user-settings-container"
-      >
-        Edit
-      </button>
-      <UserSettings />
-    </div>
+    <select type="dropdown" className="classList">
+        <option value="testSkill">Test Skill</option>
+    </select>
   );
 };
 //----------------------------------------------------------------
-export default Profile;
+export default SkillDropdown;
