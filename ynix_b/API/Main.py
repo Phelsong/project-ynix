@@ -1,3 +1,4 @@
+from turtle import setundobuffer
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas
@@ -28,5 +29,8 @@ def read_root():
 @app.get("/classes/:class")
 def get_class(class_name):
     return {"You've Got": class_name}
-
 # -----------------------------------------------------------------------------
+@app.put("/basic_calc")
+def basic_calc():
+    math = "stuff"
+#------------------------------------------------------------------------------
