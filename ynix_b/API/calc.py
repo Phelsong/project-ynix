@@ -51,6 +51,7 @@ hit_damage_high = (e_ap_high * hit1 + t_ap + human_ap_high if e_ap_high >
 
 def random_hits(hit1, hit1_count):
     hit1_counter = 0
+    skill_hit_damage = 0
     while hit1_counter <= hit1_count:
         damage_random = (t_ap-7 + random.randrange(0, 14)) - t_dr
         human_ap_random = 0
@@ -64,12 +65,14 @@ def random_hits(hit1, hit1_count):
         e_ap_random = damage_random + human_ap_random
         hit_damage_random = (e_ap_random * hit1 + t_ap +
                              human_ap_random if e_ap_random > 0 else 0 + t_ap + human_ap_random)*.8
+        skill_hit_damage += hit_damage_random
         print("hit", hit1_counter, "damage: ", round(hit_damage_random))
         hit1_counter += 1
+    return skill_hit_damage
 
 
 # ----------------------------------------------------------------
 # outputs
 print("mean hit is:", hit_damage_mean)
 print("hit range is:", hit_damage_low, "-", hit_damage_high)
-random_hits(hit1, hit1_count)
+print("total hit damage:", random_hits(hit1, hit1_count))
