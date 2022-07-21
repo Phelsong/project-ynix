@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ClassDropdown, PlayerInputForm, DefenderForm } from "../index";
+import { SkillDropdown, PlayerInputForm, DefenderForm } from "../index";
 //----------------------------------------------------------------
 
 //----------------------------------------------------------------
@@ -10,6 +10,7 @@ const SimSettings = () => {
   //----------------------------------------------------------------
   return (
     <div className="sim-settings-container">
+       <SkillDropdown />
       <switch type="checkbox" toggle />
       <button
         className="uk-button"
