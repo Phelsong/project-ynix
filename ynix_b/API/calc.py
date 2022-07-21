@@ -9,7 +9,7 @@ unmitigated_damage_mean = t_ap-t_dr
 #----------------------------------------------------------------
 hit_damage = ((unmitigated_damage_mean if unmitigated_damage_mean > 0 else 0) * hit1 + t_ap)*.8
 
-
+print(unmitigated_damage_mean)
 print("mean hit is:", hit_damage)
 # print("hit range is:", hit_damage_range_low, "-", hit_damage_range_high)
 #----------------------------------------------------------------
