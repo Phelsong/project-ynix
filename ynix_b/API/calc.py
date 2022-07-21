@@ -39,9 +39,10 @@ elif damage_high < 0:
 e_ap_low = damage_low + human_ap_low
 e_ap_high = damage_high + human_ap_high
 
-hit_damage_low = (e_ap_low * hit1 + damage_low + human_ap_low if e_ap_low >
+hit_damage_low = (e_ap_low * hit1 + t_ap + human_ap_low if e_ap_low >
                   0 else t_ap + human_ap_low)*.8
-hit_damage_high = (e_ap_high * hit1 + damage_high + human_ap_high if e_ap_high >
+
+hit_damage_high = (e_ap_high * hit1 + t_ap + human_ap_high if e_ap_high >
                   0 else t_ap + human_ap_high)*.8
 
 # ----------------------------------------------------------------
@@ -63,7 +64,7 @@ def random_hits(hit1, hit1_count):
         e_ap_random = damage_random + human_ap_random
         hit_damage_random = (e_ap_random * hit1 + t_ap +
                              human_ap_random if e_ap_random > 0 else 0 + t_ap + human_ap_random)*.8
-        print("hit", hit1_counter, "damage: ", hit_damage_random)
+        print("hit", hit1_counter, "damage: ", round(hit_damage_random))
         hit1_counter += 1
 
 
