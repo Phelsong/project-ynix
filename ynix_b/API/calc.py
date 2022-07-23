@@ -71,7 +71,7 @@ def random_hits(hit1, hit1_count):
         print("hit", hit1_counter, "damage: ", round(hit_damage_random))
         hit1_counter += 1
     return skill_hit_damage
-
+#add base damage mod before publish
 
 # ----------------------------------------------------------------
 # outputs
