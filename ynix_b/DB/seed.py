@@ -5,7 +5,10 @@ from Index import *
 def drop_tables():
     cur.execute('''DROP TABLE IF EXISTS users;
                    DROP TABLE IF EXISTS classes;
-                   DROP TABLE IF EXISTS class_skills;''')
+                   DROP TABLE IF EXISTS class_skills;
+                   DROP TABLE IF EXISTS class_data;
+                   DROP TABLE IF EXISTS zones;
+                   ''')
 
 def create_tables():
     cur.execute('''CREATE TABLE users 
@@ -22,6 +25,16 @@ def create_tables():
                    skill_acc INT NOT NULL,
                    skill_details JSONB);
                    ''')
+    cur.execute('''CREATE TABLE class_data
+                (class_id REFERENCES classes(class_id) NOT NULL,
+                pvp_class_mods json);''')
+    cur.execute('''CREATE TABLE zones
+                (zone_id SERIAL PRIMARY KEY,
+                zone_name VARCHAR(200) NOT NULL,
+                region VARCHAR(200) NOT NULL,
+                zone_dr INT,
+                zone_ev INT,
+                mob_type VARCHAR(200) NOT NULL,;''')
 
 def class_seed():
     cur.execute('''INSERT INTO classes (class_id, class_name)

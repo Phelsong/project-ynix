@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from ynix_b.API.calc import single_skill
+
 # -----------------------------------------------------------------------------
 app = FastAPI()
 # -----------------------------------------------------------------------------
@@ -32,3 +33,5 @@ def get_class(class_name):
 def basic_calc():
     return single_skill()
 #------------------------------------------------------------------------------
+@app.get("/zones")
+    
