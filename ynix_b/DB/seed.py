@@ -3,19 +3,19 @@ from Index import *
 
 
 def drop_tables():
-    cursor.execute('''DROP TABLE IF EXISTS users;
+    cur.execute('''DROP TABLE IF EXISTS users;
                    DROP TABLE IF EXISTS classes;
                    DROP TABLE IF EXISTS class_skills;''')
 
 def create_tables():
-    cursor.execute('''CREATE TABLE users 
+    cur.execute('''CREATE TABLE users 
                     (user_id serial PRIMARY KEY
                     , username varchar(100) NOT NULL,
                     password varchar(200))''')
-    cursor.execute('''CREATE TABLE classes
+    cur.execute('''CREATE TABLE classes
                     (class_id SERIAL PRIMARY KEY ,
                     class_name VARCHAR(150) NOT NULL)''')
-    cursor.execute('''CREATE TABLE class_skills
+    cur.execute('''CREATE TABLE class_skills
                    (skill_id SERIAL PRIMARY KEY,
                    "class_id" INT REFERENCES classes(class_id) NOT NULL,
                    skill_name VARCHAR(200) NOT NULL,
@@ -24,7 +24,7 @@ def create_tables():
                    ''')
 
 def class_seed():
-    cursor.execute('''INSERT INTO classes (class_id, class_name)
+    cur.execute('''INSERT INTO classes (class_id, class_name)
                    VALUES
         (1, 'Warrior'),
         (2, 'Ranger'),
@@ -56,6 +56,6 @@ def class_seed():
 drop_tables()
 create_tables()
 class_seed()
-connect.commit()
-connect.close()
+conn.commit()
+conn.close()
 # ----------------------------------------------------------------

@@ -1,12 +1,14 @@
-import psycopg2
+import psycopg
 from dotenv import dotenv_values
 # ----------------------------------------------------------------
 config = dotenv_values("../../.env")
-myUser = config['USER_NAME']
-myPassword = config['PASS_WORD']
+my_user = config['USER_NAME']
+my_pass = config['PASS_WORD']
+lab_db = config['LAB_DB']
+lab_db_server = config['LAB_DB_SERVER']
+lab_db_port = config['LAB_DB_PORT']
+
 # ----------------------------------------------------------------
-connect = psycopg2.connect(database="ynix_db", user=myUser,
-                           password=myPassword, host="localhost", port="5432")
-cursor = connect.cursor()
-# ----------------------------------------------------------------
+conn = psycopg.connect(hostaddr=lab_db_server, port=lab_db_port, dbname=lab_db, user=my_user, password=my_pass )
+# cur = conn.cursor()
 
