@@ -1,6 +1,6 @@
 Skills = {
     'One_Two_Three': {
-        'skill_id': 3866,
+        'skill_id': 18_2,
         'skill_accuracy': .11,
         'skill_details': {
             'hit1': 889,
@@ -21,7 +21,7 @@ Skills = {
         }
     },
     'Eat_This_VI': {
-        'skill_id': 3884,
+        'skill_id': 18_4,
         'skill_acc': .05,
         'skill_details': {
             'hit1': 1452,
