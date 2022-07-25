@@ -10,5 +10,5 @@ lab_db_port = config['LAB_DB_PORT']
 
 # ----------------------------------------------------------------
 conn = psycopg.connect(hostaddr=lab_db_server, port=lab_db_port, dbname=lab_db, user=my_user, password=my_pass )
-# cur = conn.cursor()
+cur = conn.cursor()
 
