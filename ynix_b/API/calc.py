@@ -52,8 +52,9 @@ hit_damage_high = (e_ap_high * hit1 + t_ap + human_ap_high if e_ap_high >
 
 
 def random_hits(hit1, hit1_count):
-    hit1_counter = 0
+    hit1_counter = 1
     skill_hit_damage = 0
+    hits = []
     while hit1_counter <= hit1_count:
         damage_random = (t_ap-7 + random.randrange(0, 14)) - t_dr
         human_ap_random = 0
@@ -69,12 +70,20 @@ def random_hits(hit1, hit1_count):
                              human_ap_random if e_ap_random > 0 else 0 + t_ap + human_ap_random)*.8
         skill_hit_damage += hit_damage_random
         print("hit", hit1_counter, "damage: ", round(hit_damage_random))
+        hits.append(round(hit_damage_random))
         hit1_counter += 1
-    return skill_hit_damage
+    hits.append(sum(hits))
+    print(hits)
+    return hits
 #add base damage mod before publish
 
 # ----------------------------------------------------------------
 # outputs
-print("mean hit is:", hit_damage_mean)
-print("hit range is:", hit_damage_low, "-", hit_damage_high)
-print("total hit damage:", random_hits(hit1, hit1_count))
+def single_skill():
+    data = {
+        "mean" : hit_damage_mean,
+        "low" : hit_damage_low,
+        "high" : hit_damage_high,
+        "hits" : random_hits(hit1, hit1_count)
+    }
+    return data

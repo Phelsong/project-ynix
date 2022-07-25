@@ -1,8 +1,6 @@
-from turtle import setundobuffer
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import pandas
-import psycopg2
+from ynix_b.API.calc import single_skill
 # -----------------------------------------------------------------------------
 app = FastAPI()
 # -----------------------------------------------------------------------------
@@ -23,7 +21,7 @@ app.add_middleware(
 # -----------------------------------------------------------------------------
 
 @app.get("/api")
-def read_root():
+def health_check():
     return {"You've Got": "Py"}
 # -----------------------------------------------------------------------------
 @app.get("/classes/:class")
@@ -32,5 +30,5 @@ def get_class(class_name):
 # -----------------------------------------------------------------------------
 @app.put("/basic_calc")
 def basic_calc():
-    math = "stuff"
+    return single_skill()
 #------------------------------------------------------------------------------
