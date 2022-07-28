@@ -2,7 +2,7 @@
 class_list = {}
 
 class Class:
-    def __init__(self, id, name, region, dr, evasion, mob_type):
+    def __init__(self, id, name, dr, evasion):
         self.id = id
         self.name = name
         self.dr = dr
