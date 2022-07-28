@@ -3,11 +3,12 @@ from Index import *
 
 
 def drop_tables():
-    cur.execute('''DROP TABLE IF EXISTS users;
-                   DROP TABLE IF EXISTS classes;
+    cur.execute('''
+                   DROP TABLE IF EXISTS zones;
                    DROP TABLE IF EXISTS class_skills;
                    DROP TABLE IF EXISTS class_data;
-                   DROP TABLE IF EXISTS zones;
+                   DROP TABLE IF EXISTS classes;
+                   DROP TABLE IF EXISTS users;
                    ''')
 
 def create_tables():
@@ -23,13 +24,13 @@ def create_tables():
                    "class_id" INT REFERENCES classes(class_id) NOT NULL,
                    skill_name VARCHAR(200) NOT NULL,
                    skill_acc INT NOT NULL,
-                   skill_details JSONB);
+                   skill_details JSON);
                    ''')
     cur.execute('''CREATE TABLE class_data
                 (class_id REFERENCES classes(class_id) NOT NULL,
                 pvp_class_mods json);''')
     cur.execute('''CREATE TABLE zones
-                (zone_id SERIAL PRIMARY KEY,
+                (zone_id INT PRIMARY KEY,
                 zone_name VARCHAR(200) NOT NULL,
                 region VARCHAR(200) NOT NULL,
                 zone_dr INT,
@@ -64,6 +65,16 @@ def class_seed():
         (23, 'Corsair'),
         (24, 'Drakania')''')
 
+def zone_seed():
+    
+    cur.execute('''INSERT INTO TABLE zones
+                (zone_id SERIAL PRIMARY KEY,
+                zone_name VARCHAR(200) NOT NULL,
+                region VARCHAR(200) NOT NULL,
+                zone_dr INT,
+                zone_ev INT,
+                mob_type VARCHAR(200) NOT NULL;''')
+    
 
 # ----------------------------------------------------------------
 drop_tables()
