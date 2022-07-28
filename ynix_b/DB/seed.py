@@ -1,4 +1,6 @@
-from Index import *
+from main import cur, conn
+from pve_data import zone_list
+from class_list import class_list
 # ----------------------------------------------------------------
 
 
@@ -10,6 +12,7 @@ def drop_tables():
                    DROP TABLE IF EXISTS classes;
                    DROP TABLE IF EXISTS users;
                    ''')
+
 
 def create_tables():
     cur.execute('''CREATE TABLE users 
@@ -34,52 +37,27 @@ def create_tables():
                 zone_name VARCHAR(200) NOT NULL,
                 region VARCHAR(200) NOT NULL,
                 zone_dr INT,
-                zone_ev INT,
+                zone_evasion INT,
                 mob_type VARCHAR(200) NOT NULL,;''')
 
+
 def class_seed():
-    cur.execute('''INSERT INTO classes (class_id, class_name)
-                   VALUES
-        (1, 'Warrior'),
-        (2, 'Ranger'),
-        (3, 'Sorceress'),
-        (4, 'Berserker'),
-        (5, 'Tamer'),
-        (6, 'Musa'),
-        (7, 'Maewha'),
-        (8, 'Valkyrie'),
-        (9, 'Kunoichi'),
-        (10, 'Ninja'),
-        (11, 'Wizard'),
-        (12, 'Witch'),
-        (13, 'Dark Knight'),
-        (14, 'Striker'),
-        (15, 'Mystic'),
-        (16, 'Lahn'),
-        (17, 'Archer'),
-        (18, 'Shai'),
-        (19, 'Guardian'),
-        (20, 'Hashashin'),
-        (21, 'Nova'),
-        (22, 'Sage'),
-        (23, 'Corsair'),
-        (24, 'Drakania')''')
+    for char in class_list.values():
+        cur.execute('''INSERT INTO classes (class_id, class_name)
+                   VALUES ({char.id}, {char.name})''')
+
 
 def zone_seed():
-    
-    cur.execute('''INSERT INTO TABLE zones
-                (zone_id SERIAL PRIMARY KEY,
-                zone_name VARCHAR(200) NOT NULL,
-                region VARCHAR(200) NOT NULL,
-                zone_dr INT,
-                zone_ev INT,
-                mob_type VARCHAR(200) NOT NULL;''')
-    
+    for zone in zone_list.values():
+        cur.execute('''INSERT INTO zones (zone_id, zone_name, region, zone_dr, zone_evasion, mob_type) VALUES (?,
+                VALUES ({zone.id}, {zone.name}, {zone.region}, {zone.dr}, {zone.evasion}, {zone.mob_type}''')
+
 
 # ----------------------------------------------------------------
 drop_tables()
 create_tables()
 class_seed()
+zone_seed()
 conn.commit()
 conn.close()
 # ----------------------------------------------------------------
