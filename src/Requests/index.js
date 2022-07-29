@@ -1,17 +1,19 @@
-import axios from 'axios';
-require("dotenv").config();
-import {getZoneInfo} from"./get_data"
+const axios = require('axios').default;
+// require("dotenv").config();
+import {
+  getZoneInfo
+} from "./get_data"
 //----------------------------------------------------------------
-const apiUrl = process.env.REACT_APP_API_URL;
+axios.defaults.baseURL = 'http://127.0.0.1:8000';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 //----------------------------------------------------------------
 
-export async function checkAPI() {
-  const {
-    data
-  } = await axios.get(`${url}/api`)
-    .then(res =>
-      res.data)
+export async function checkApiStatus() {
+  const response = await axios.get(`/api`)
     .catch(err => console.error(err))
+  console.log(response.data)
 }
 //----------------------------------------------------------------
-export {getZoneInfo}
+export {
+  getZoneInfo
+}

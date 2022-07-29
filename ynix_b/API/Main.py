@@ -9,7 +9,7 @@ origins = [
     "http://localhost",
     "http://localhost:3000",
     "https://localhost:3000",
-    "http://127.0.0.1:"
+    "http://127.0.0.1"
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -45,3 +45,7 @@ def get_zone_list():
     return "wip"
     
 #------------------------------------------------------------------------------
+
+@app.get("/zones/{zone_id}")
+def get_zone_list(zone_id):
+    return "wip"
