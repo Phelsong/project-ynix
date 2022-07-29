@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from ynix_b.API.calc import single_skill
+from calc import single_skill
+from queries import *
 
 # -----------------------------------------------------------------------------
 app = FastAPI()
@@ -9,7 +10,7 @@ origins = [
     "http://localhost",
     "http://localhost:3000",
     "https://localhost:3000",
-    "http://127.0.0.1:"
+    "http://127.0.0.1"
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -24,13 +25,14 @@ app.add_middleware(
 
 @app.get("/api")
 def health_check():
-    return {"You've Got": "Py"}
+    return {"You've got Py" : "server active"}
 # -----------------------------------------------------------------------------
 
 
-@app.get("/classes/:class")
-def get_class(class_name):
-    return {"You've Got": class_name}
+@app.get("/classes/{class_id}")
+async def get_class(class_id):
+    [data] = get_class_query(class_id)
+    return data
 # -----------------------------------------------------------------------------
 
 
@@ -42,6 +44,12 @@ def basic_calc():
 
 @app.get("/zones")
 def get_zone_list():
-    print("wip")
+    data = get_zone_list_query()
+    return data
     
 #------------------------------------------------------------------------------
+
+@app.get("/zones/{zone_id}")
+async def get_zone_info(zone_id):
+    [data] = get_zone_query(zone_id)
+    return data
