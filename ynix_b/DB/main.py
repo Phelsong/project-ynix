@@ -53,3 +53,6 @@ def get_zone_list():
 async def get_zone_info(zone_id):
     [data] = get_zone_query(zone_id)
     return data
+
+#------------------------------------------------------------------------------
+
