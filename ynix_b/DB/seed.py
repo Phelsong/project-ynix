@@ -1,5 +1,5 @@
 
-from ..__init__ import cur, conn
+from __init__ import cur, conn
 from pve_data import zone_list
 from class_list import class_list
 # ----------------------------------------------------------------

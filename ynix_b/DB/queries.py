@@ -1,9 +1,13 @@
-from __init__ import cur
+from __init__ import cur, conn
 #----------------------------------------------------------------
 
     
-async def get_class_list():
-    class_list_fetch = await cur.execute('''SELECT * FROM classes''')
+def get_class_list():
+    cur.execute('''SELECT * FROM classes''')
+    class_list_fetch = cur.fetchall()
+    print(class_list_fetch)
     return class_list_fetch
 
-print(get_class_list().count())
+get_class_list()
+
+conn.commit()
