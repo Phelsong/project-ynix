@@ -1,4 +1,4 @@
-import React, {lazy} from 'react';
+import React, {lazy, useState} from 'react';
 import { Route, Routes } from "react-router-dom";
 //----------------------------------------------------------------
 import {Home, SimSettings, Results, Profile} from "../index"

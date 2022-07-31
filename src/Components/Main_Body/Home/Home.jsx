@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="Home">
       <h1>Welcome to Project_Ynix!</h1>
-      <button onClick={() => checkAPI()} style={{ width: 50, height: 50, alignSelf: 'flex-end' }}>Check </button>
+      <button onClick={() => checkAPI()} style={{ width: 50, height: 50, alignSelf: 'flex-end', margin: 1000}}>Check </button>
     </div>
   );
 };

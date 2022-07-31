@@ -25,7 +25,7 @@ app.add_middleware(
 
 @app.get("/api")
 def health_check():
-    return {"You've got Py" : "server active"}
+    return {"Server Status": "You've got Py"}
 # -----------------------------------------------------------------------------
 
 

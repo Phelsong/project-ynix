@@ -1,16 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { SkillDropdown, PlayerInputForm, DefenderForm } from "../index";
-//----------------------------------------------------------------
-
+import {
+  SkillDropdown,
+  PlayerInputForm,
+  DefenderForm,
+} from "../index";
 //----------------------------------------------------------------
 const SimSettings = () => {
   //----------------------------------------------------------------
   const navTo = useNavigate();
+ 
+  //----------------------------------------------------------------
+  async function RunSim() {
+    navTo("./Results.jsx");
+  }
+
   //----------------------------------------------------------------
   return (
     <div className="sim-settings-container">
-       <SkillDropdown />
+      <SkillDropdown />
       <switch type="checkbox" toggle />
       <button
         className="uk-button"
@@ -28,9 +36,8 @@ const SimSettings = () => {
         Defender
       </button>
       <DefenderForm className="sim-settings-form" />
-      <button className="btn btn-primary" onClick={(e) => navTo("/Results")}>
-        {" "}
-        Run{" "}
+      <button className="btn btn-primary" onClick={(e) => RunSim()}>
+        Run
       </button>
     </div>
   );
