@@ -1,4 +1,5 @@
 import psycopg
+from psycopg.rows import dict_row
 from dotenv import dotenv_values
 # ----------------------------------------------------------------
 config = dotenv_values("../../.env")
@@ -9,5 +10,7 @@ lab_db_server = config['LAB_DB_SERVER']
 lab_db_port = config['LAB_DB_PORT']
 
 # ----------------------------------------------------------------
-conn = psycopg.connect(hostaddr=lab_db_server, port=lab_db_port, dbname=lab_db, user=my_user, password=my_pass )
+conn = psycopg.connect(hostaddr=lab_db_server, port=lab_db_port, dbname=lab_db, user=my_user, password=my_pass, row_factory=dict_row )
+alt_conn = psycopg.connect(hostaddr=lab_db_server, port=lab_db_port, dbname=lab_db, user=my_user, password=my_pass)
+alt_cur = alt_conn.cursor()
 cur = conn.cursor()

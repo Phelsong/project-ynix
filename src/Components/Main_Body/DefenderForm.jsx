@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import {ClassDropdown} from "../index"
+import {ClassDropdown, ZoneDropdown} from "../index"
+import { getZoneList } from "../../Requests";
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 const DefenderForm = () => {
   //----------------------------------------------------------------
   const navTo = useNavigate();
+  const [zoneList, setZoneList] = useState([])
+
+async function handleCall() {
+  const temp = await getZoneList()
+  setZoneList(temp)
+}
+
   //----------------------------------------------------------------
   return (
     <div className="defender-container">
@@ -30,9 +38,15 @@ const DefenderForm = () => {
       <form className="class-choice-form">
         Defender - PvP
         <ClassDropdown />
+        PvE
+        <ZoneDropdown  zoneList={zoneList}/>
+        <button onClick={e => {e.preventDefault(); handleCall()}}> get list </button>
       </form>
     </div>
   );
 };
 //----------------------------------------------------------------
 export default DefenderForm;
+
+
+//change Call button to toggle

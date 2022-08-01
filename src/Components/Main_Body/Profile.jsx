@@ -1,5 +1,5 @@
 import React from "react";
-import { UserSettings } from "../index";
+import { UserSettings, Login } from "../index";
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 const Profile = () => {
