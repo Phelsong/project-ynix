@@ -1,11 +1,9 @@
-# -------------------------------------------------------------------------------
-from ast import If
 from typing import Optional
-
-
+# -------------------------------------------------------------------------------
 class_list = {}
-#class_list var for seed function
-
+skill_list = {}
+#list variables are for seed functions
+#--------------------------------------------------------------------------------
 class Class:
     def __init__(self, id, name, dr, evasion):
         self.id = id
@@ -14,28 +12,32 @@ class Class:
         self.evasion = evasion
         self.species = "human"
         class_list.setdefault(self.name, self)
-
+        # self.skills = {}
 
 class Skill:
-    def __init__(self, id, name, acc_rate, hit1, hit2, hit3, hit4, hit5, hit6, reduced_on_cd: Optional(bool) = False):
+    def __init__(self, id, class_id, name, acc_rate, hit1, hit2=None, hit3=None, hit4=None, hit5=None, hit6=None, reduced_on_cd=False):
         self.id = id
+        self.class_id = class_id
         self.name = name
         self.acc_rate = acc_rate
         self.hit1 = hit1
-        self.hit2 = hit2 if hit2 is not None else None
-        self.hit3 = hit3 if hit3 is not None else None
-        self.hit4 = hit4 if hit4 is not None else None
-        self.hit5 = hit5 if hit5 is not None else None
-        self.hit6 = hit6 if hit6 is not None else None
+        self.hit2 = hit2
+        self.hit3 = hit3
+        self.hit4 = hit4
+        self.hit5 = hit5
+        self.hit6 = hit6
         self.reduced_on_cd = reduced_on_cd
-
-
+        self.details = {"acc_rate" : acc_rate, "hit1" : hit1, "hit2" : hit2, "hit3" : hit3, "hit4" : hit4, "hit5": hit5, "hit6" : hit6, "reduced_on_cd" : reduced_on_cd}
+        skill_list.setdefault(self.name, self)
+        
 class Hit:
-    def __init__(self, damage, hit_count, crit_rate, pvp_mod):
+    def __init__(self, damage, hit_count, pvp_mod, pve_crit_rate=0, pvp_crit_rate=0):
         self.damage = damage
         self.hit_count = hit_count
-        self.crit_rate = crit_rate
         self.pvp_mod = pvp_mod
+        self.pve_crit_rate = pve_crit_rate
+        self.pvp_crit_rate = pvp_crit_rate
+
 
 
 # ------------------------------------------------------------------------------
@@ -56,7 +58,7 @@ striker = Class(id=14, name="Striker", dr=0, evasion=0)
 mystic = Class(id=15, name="Mystic", dr=0, evasion=0)
 lahn = Class(id=16, name="Lahn", dr=0, evasion=0)
 archer = Class(id=17, name="Archer", dr=0, evasion=0)
-shai = Class(id=18, name="Shai", dr=0, evasion=0)
+
 guardian = Class(id=19, name="Guardian", dr=0, evasion=0)
 hashashin = Class(id=20, name="Hashashin", dr=0, evasion=0)
 nova = Class(id=21, name="Nova", dr=0, evasion=0)
@@ -64,5 +66,5 @@ sage = Class(id=22, name="Sage", dr=0, evasion=0)
 corsair = Class(id=23, name="Corsair", dr=0, evasion=0)
 drakania = Class(id=24, name="Drakania", dr=0, evasion=0)
 
-
-
+#add class sample configs later!
+from class_index import *

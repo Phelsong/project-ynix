@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from calc import single_skill
+from calc import *
 from queries import *
 
 # -----------------------------------------------------------------------------

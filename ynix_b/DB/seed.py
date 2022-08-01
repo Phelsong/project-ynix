@@ -1,7 +1,7 @@
-
+import json
 from __init__ import cur, conn
 from pve_data import zone_list
-from class_data import class_list
+from class_data import class_list, skill_list
 # ----------------------------------------------------------------
 
 
@@ -24,10 +24,9 @@ def create_tables():
                     (class_id INT PRIMARY KEY ,
                     class_name VARCHAR(150) NOT NULL)''')
     cur.execute('''CREATE TABLE class_skills
-                   (skill_id SERIAL PRIMARY KEY,
+                   (skill_id INT PRIMARY KEY,
                    "class_id" INT REFERENCES classes(class_id) NOT NULL,
                    skill_name VARCHAR(200) NOT NULL,
-                   skill_acc INT NOT NULL,
                    skill_details JSON);
                    ''')
     cur.execute('''CREATE TABLE class_data
@@ -46,6 +45,11 @@ def class_seed():
     for char in class_list.values():
         cur.execute('''INSERT INTO classes (class_id, class_name)
                    VALUES (%s , %s )''', (char.id, char.name))
+        
+    for skill in skill_list.values():
+        print("skill", skill.details)      
+        cur.execute('''INSERT INTO class_skills (skill_id, class_id, skill_name)
+                    values (%s , %s, %s)''', (skill.id, skill.class_id, skill.name))
 
 
 def zone_seed():
