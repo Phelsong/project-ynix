@@ -11,7 +11,7 @@ const ZoneDropdown = ({zoneList}) => {
       {zoneList.length
         ? zoneList.map(zone => (
             <option value={zone.zone_id}>
-            {zone.zone_ name}
+            {zone.zone_name}
             </option>
           ))
         : null}
