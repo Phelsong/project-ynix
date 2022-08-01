@@ -1,3 +1,11 @@
+from class_data import *
+#----------------------------------------------------------------
+Swing_Swing = Skill(id=18_1, name="Swing Swing", acc_rate=.11,
+                    hit1=Hit(damage=16.69, hit_count=2, crit_rate=0),
+                    hit2=Hit(damage=16.69, hit_count=2, crit_rate=0),   
+                    hit3=Hit(damage=16.69, hit_count=2, crit_rate=0),
+                    hit4=Hit(damage=16.69, hit_count=2, crit_rate=0))
+#------------------------------------------------------------------
 Skills = {
     'One_Two_Three': {
         'skill_id': 18_2,
