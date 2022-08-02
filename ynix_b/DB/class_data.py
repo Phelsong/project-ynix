@@ -1,4 +1,3 @@
-from ast import If
 from typing import Optional
 # -------------------------------------------------------------------------------
 class_list = {}
@@ -27,8 +26,7 @@ class Skill:
         self.hit4 = hit4.__dict__ if hit4 is not None else None
         self.hit5 = hit5.__dict__ if hit5 is not None else None
         self.hit6 = hit6.__dict__ if hit6 is not None else None
-        self.reduced_on_cd = reduced_on_cd
-        # self.details = self.__dict__   
+        self.reduced_on_cd = reduced_on_cd 
         skill_list.setdefault(self.name, self)
         
 class Hit:

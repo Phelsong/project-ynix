@@ -1,5 +1,5 @@
 from class_data import *
-shai = Class(id=18, name="Shai", dr=0, evasion=0)
+shai = Class(id=18, name="Shai", dr=23, evasion=0)
 # ----------------------------------------------------------------
 Swing_Swing = Skill(id=18_1, class_id=18, name="Swing Swing", acc_rate=.11,
                     hit1=Hit(damage=16.69, hit_count=2, pvp_mod=0.2),

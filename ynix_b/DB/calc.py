@@ -1,5 +1,4 @@
 from typing import Optional
-from math_data_temp import *
 import random
 # ----------------------------------------------------------------
 hit1 = 16.63
@@ -34,7 +33,7 @@ class Attacker(object):
 
 
 class Defender(object):
-    def __init__(self, dr, dr_rate, evasion, evasion_rate, dr_combat_buffs, dr_debuffs, evasion_combat_buffs, evasion_debuffs, species: Optional(str)):
+    def __init__(self, dr, dr_rate, evasion, evasion_rate, dr_combat_buffs, dr_debuffs, evasion_combat_buffs, evasion_debuffs, species="human"):
         self.dr = dr
         self.dr_rate = dr_rate
         self.evasion = evasion
@@ -44,16 +43,17 @@ class Defender(object):
         self.evasion_combat_buffs = evasion_combat_buffs
         self.evasion_debuffs = evasion_debuffs
         self.__class__ = 100
-        self.species = "human"
+        self.species = None
         # 100 = PvE
 
 
 # -----------------------------------------------------------------
 
 class Calc:
-    def __init__(self, attacker, defender):
+    def __init__(self, attacker, defender, skill):
         self.attacker = attacker
         self.defender = defender
+        self.skill = skill
         self.t_ap = attacker.ap + attacker.ap_combat_buffs - attacker.ap_debuffs if defender.__class__ != 100 else attacker.ap + \
             attacker.monster_ap + attacker.ap_combat_buffs - attacker.ap_debuffs
 
@@ -147,10 +147,15 @@ class Calc:
 
         return hits
 
-    def run_calc(self):
+    def run_calc(self,):
         data = {
-            "mean": self.calc_mean(),
-            "range": self.calc_range(),
-            "hits": self.calc_hits(hit1, hit1_count, self)
+            "Hit 1 mean": self.calc_mean(),
+            "Hit 1 range": self.calc_range(),
+            "hit1": self.calc_hits(self.skill.hit1, self.skill.hit1.hit_count, self),
+            "hit2": self.calc_hits(self.skill.hit2, self.skill.hit2.hit_count, self) if self.skill.hit2.hit_count > 0 else None,
+            "hit3": self.calc_hits(self.skill.hit3, self.skill.hit3.hit_count, self) if self.skill.hit3.hit_count > 0 else None,
+            "hit4": self.calc_hits(self.skill.hit4, self.skill.hit4.hit_count, self) if self.skill.hit4.hit_count > 0 else None,
+            "hit5": self.calc_hits(self.skill.hit5, self.skill.hit5.hit_count, self) if self.skill.hit5.hit_count > 0 else None,
+            "hit6": self.calc_hits(self.skill.hit6, self.skill.hit6.hit_count, self) if self.skill.hit6.hit_count > 0 else None            
         }
         return data
