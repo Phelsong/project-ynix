@@ -1,5 +1,6 @@
 from typing import Optional
 import random
+from typing_extensions import Self
 # ----------------------------------------------------------------
 hit1 = 16.63
 hit1_count = 2
@@ -42,7 +43,7 @@ class Defender(object):
         self.dr_debuffs = dr_debuffs
         self.evasion_combat_buffs = evasion_combat_buffs
         self.evasion_debuffs = evasion_debuffs
-        self.__class__ = 100
+        self.class_id = 100
         self.species = None
         # 100 = PvE
 
@@ -54,12 +55,10 @@ class Calc:
         self.attacker = attacker
         self.defender = defender
         self.skill = skill
-        self.t_ap = attacker.ap + attacker.ap_combat_buffs - attacker.ap_debuffs if defender.__class__ != 100 else attacker.ap + \
+        self.t_ap = attacker.ap + attacker.ap_combat_buffs - attacker.ap_debuffs if defender.class_id != 100 else attacker.ap + \
             attacker.monster_ap + attacker.ap_combat_buffs - attacker.ap_debuffs
 
-        self.t_acc_rate = attacker.acc_rate + \
-            attacker.acc_combat_buffs(
-                attacker.acc * .21) - attacker.acc_debuffs
+        self.t_acc_rate = attacker.acc_rate + attacker.acc_combat_buffs + (attacker.acc * .21) - attacker.acc_debuffs
 
         self.t_evasion_rate = defender.evasion_rate + (defender.evasion * .21) + \
             defender.evasion_combat_buffs - defender.evasion_debuffs
@@ -120,15 +119,17 @@ class Calc:
         hit_damage_high = (e_ap_high * hit1 + self.t_ap + species_ap_high if e_ap_high >
                            0 else self.t_ap + species_ap_high)*.8
 
-        return "{hit_damage_low} - {hit_damage_high}"
+        return [hit_damage_low, hit_damage_high]
 
-    def calc_hits(hit1, hit1_count, self):
-        hit1_counter = 1
+    def calc_hits(self):
+        hit = self.skill['hit1']['damage']
+        hit_count = self.skill['hit1']['hit_count']
+        hit_counter = 1
         skill_hit_damage = 0
         hits = []
-        while hit1_counter <= hit1_count:
+        while hit_counter <= hit_count:
             damage_random = (self.t_ap-7 + random.randrange(0, 14)) - self.t_dr
-            pecies_ap_random = 0
+            species_ap_random = 0
             if damage_random > 0:
                 damage_random += self.species_damage * 2
             elif damage_random < 0:
@@ -138,24 +139,24 @@ class Calc:
                     2 if hd_temp > 0 else self.species_damage/2
 
             e_ap_random = damage_random + species_ap_random
-            hit_damage_random = (e_ap_random * hit1 + self.t_ap +
+            hit_damage_random = (e_ap_random * hit + self.t_ap +
                                  species_ap_random if e_ap_random > 0 else 0 + self.t_ap + species_ap_random)*.8
             skill_hit_damage += hit_damage_random
             hits.append(round(hit_damage_random))
-            hit1_counter += 1
+            hit_counter += 1
             hits.append(sum(hits))
 
         return hits
 
-    def run_calc(self,):
+    def run_calc(self):
         data = {
             "Hit 1 mean": self.calc_mean(),
             "Hit 1 range": self.calc_range(),
-            "hit1": self.calc_hits(self.skill.hit1, self.skill.hit1.hit_count, self),
-            "hit2": self.calc_hits(self.skill.hit2, self.skill.hit2.hit_count, self) if self.skill.hit2.hit_count > 0 else None,
-            "hit3": self.calc_hits(self.skill.hit3, self.skill.hit3.hit_count, self) if self.skill.hit3.hit_count > 0 else None,
-            "hit4": self.calc_hits(self.skill.hit4, self.skill.hit4.hit_count, self) if self.skill.hit4.hit_count > 0 else None,
-            "hit5": self.calc_hits(self.skill.hit5, self.skill.hit5.hit_count, self) if self.skill.hit5.hit_count > 0 else None,
-            "hit6": self.calc_hits(self.skill.hit6, self.skill.hit6.hit_count, self) if self.skill.hit6.hit_count > 0 else None            
+            "hit1": self.calc_hits(),
+            # "hit2": self.calc_hits(self.skill.hit2, self.skill.hit2.hit_count, self) if self.skill.hit2.hit_count > 0 else None,
+            # "hit3": self.calc_hits(self.skill.hit3, self.skill.hit3.hit_count, self) if self.skill.hit3.hit_count > 0 else None,
+            # "hit4": self.calc_hits(self.skill.hit4, self.skill.hit4.hit_count, self) if self.skill.hit4.hit_count > 0 else None, 
+            # "hit5": self.calc_hits(self.skill.hit5, self.skill.hit5.hit_count, self) if self.skill.hit5.hit_count > 0 else None,
+            # "hit6": self.calc_hits(self.skill.hit6, self.skill.hit6.hit_count, self) if self.skill.hit6.hit_count > 0 else None            
         }
         return data
