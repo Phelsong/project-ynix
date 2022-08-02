@@ -1,7 +1,8 @@
 import json
 from __init__ import cur, conn
 from pve_data import zone_list
-from class_data import class_list, skill_list
+from class_data import class_list
+from Shai import skill_list
 # ----------------------------------------------------------------
 
 
@@ -47,9 +48,9 @@ def class_seed():
                    VALUES (%s , %s )''', (char.id, char.name))
         
     for skill in skill_list.values():
-        print("skill", skill.details)      
-        cur.execute('''INSERT INTO class_skills (skill_id, class_id, skill_name)
-                    values (%s , %s, %s)''', (skill.id, skill.class_id, skill.name))
+        details = json.dumps(skill.__dict__)
+        cur.execute('''INSERT INTO class_skills (skill_id, class_id, skill_name, skill_details)
+                    values (%s , %s, %s, %s)''', (skill.id, skill.class_id, skill.name, details))
 
 
 def zone_seed():

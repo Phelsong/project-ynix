@@ -1,3 +1,4 @@
+from ast import If
 from typing import Optional
 # -------------------------------------------------------------------------------
 class_list = {}
@@ -20,14 +21,14 @@ class Skill:
         self.class_id = class_id
         self.name = name
         self.acc_rate = acc_rate
-        self.hit1 = hit1
-        self.hit2 = hit2
-        self.hit3 = hit3
-        self.hit4 = hit4
-        self.hit5 = hit5
-        self.hit6 = hit6
+        self.hit1 = hit1.__dict__ if hit1 is not None else None
+        self.hit2 = hit2.__dict__ if hit2 is not None else None
+        self.hit3 = hit3.__dict__ if hit3 is not None else None
+        self.hit4 = hit4.__dict__ if hit4 is not None else None
+        self.hit5 = hit5.__dict__ if hit5 is not None else None
+        self.hit6 = hit6.__dict__ if hit6 is not None else None
         self.reduced_on_cd = reduced_on_cd
-        self.details = {"acc_rate" : acc_rate, "hit1" : hit1, "hit2" : hit2, "hit3" : hit3, "hit4" : hit4, "hit5": hit5, "hit6" : hit6, "reduced_on_cd" : reduced_on_cd}
+        # self.details = self.__dict__   
         skill_list.setdefault(self.name, self)
         
 class Hit:
@@ -67,4 +68,3 @@ corsair = Class(id=23, name="Corsair", dr=0, evasion=0)
 drakania = Class(id=24, name="Drakania", dr=0, evasion=0)
 
 #add class sample configs later!
-from class_index import *
