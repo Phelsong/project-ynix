@@ -123,11 +123,10 @@ class Calc:
 
     def calc_hits(self):
         hit = self.skill['hit1']['damage']
-        hit_count = self.skill['hit1']['hit_count']
         hit_counter = 1
         skill_hit_damage = 0
         hits = []
-        while hit_counter <= hit_count:
+        while hit_counter <= self.skill['hit1']['hit_count']:
             damage_random = (self.t_ap-7 + random.randrange(0, 14)) - self.t_dr
             species_ap_random = 0
             if damage_random > 0:
@@ -144,8 +143,7 @@ class Calc:
             skill_hit_damage += hit_damage_random
             hits.append(round(hit_damage_random))
             hit_counter += 1
-            hits.append(sum(hits))
-
+        hits.append(sum(hits))
         return hits
 
     def run_calc(self):
