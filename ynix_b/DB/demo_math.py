@@ -6,7 +6,7 @@ demo_attacker = {
     'aap': 0,
     'acc': 0,
     'acc_rate': 0,
-    'crit_rate': 0,
+    'crit_rate': 50,
     'monster_ap': 224,
     'kama_damage': 0,
     'demi_damage': 0,
@@ -17,6 +17,7 @@ demo_attacker = {
     'down_damage': 0,
     'air_damage': 0,
     'ap_combat_buffs': 50,
+    'crit_combat_buffs': 0,
     'ap_debuffs': 0,
     'acc_combat_buffs': 0,
     'acc_debuffs': 0,
@@ -38,7 +39,7 @@ demo_defender = {
 
 def demo_run(attacker_in, defender_in, skill_id=181):
     [skill] = get_skill_details_query(skill_id)
-    attacker = Attacker(attacker_in['ap'], attacker_in['aap'], attacker_in['acc'], attacker_in['acc_rate'], attacker_in['crit_rate'], attacker_in['monster_ap'], attacker_in['kama_damage'], attacker_in['demi_damage'], attacker_in['human_damage'], attacker_in['other_damage'], attacker_in['crit_damage'], attacker_in['back_damage'], attacker_in['down_damage'], attacker_in['air_damage'], attacker_in['ap_combat_buffs'], attacker_in['ap_debuffs'], attacker_in['acc_combat_buffs'], attacker_in['acc_debuffs'], attacker_in['human_damage_debuffs'])
+    attacker = Attacker(attacker_in['ap'], attacker_in['aap'], attacker_in['acc'], attacker_in['acc_rate'], attacker_in['crit_rate'], attacker_in['monster_ap'], attacker_in['kama_damage'], attacker_in['demi_damage'], attacker_in['human_damage'], attacker_in['other_damage'], attacker_in['crit_damage'], attacker_in['back_damage'], attacker_in['down_damage'], attacker_in['air_damage'], attacker_in['ap_combat_buffs'], attacker_in['crit_combat_buffs'], attacker_in['ap_debuffs'], attacker_in['acc_combat_buffs'], attacker_in['acc_debuffs'], attacker_in['human_damage_debuffs'])
     defender = Defender(defender_in['dr'], defender_in['dr_rate'], defender_in['evasion'], defender_in['evasion_rate'], defender_in['dr_combat_buffs'], defender_in['dr_debuffs'], defender_in['evasion_combat_buffs'], defender_in['evasion_debuffs'])
     calc = Calc(attacker, defender, skill["skill_details"])
     return calc.run_calc()
