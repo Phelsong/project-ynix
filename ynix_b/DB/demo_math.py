@@ -6,7 +6,7 @@ demo_attacker = {
     'aap': 0,
     'acc': 0,
     'acc_rate': 0,
-    'crit_rate': 50,
+    'crit_rate': .50,
     'monster_ap': 224,
     'kama_damage': 0,
     'demi_damage': 0,

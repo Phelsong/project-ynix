@@ -124,10 +124,10 @@ class Calc:
 #--------------------------------------------------------------------------------------------
 
     def calc_if_crit(self, hit_in, this_hit ):
-        crit_chance = self.attacker.crit_rate + self.attacker.crit_combat_buffs + hit_in['pvp_crit_chance'] if self.defender.class_id != 100 else self.attacker.crit_rate + self.attacker.crit_combat_buffs + hit_in['pve_crit_chance']
+        crit_chance = self.attacker.crit_rate + self.attacker.crit_combat_buffs + hit_in['pvp_crit_rate'] if self.defender.class_id != 100 else self.attacker.crit_rate + self.attacker.crit_combat_buffs + hit_in['pve_crit_rate']
         roll = random.randrange(0, 100)
         
-        return this_hit*self.attacker.crit_damage if roll > (crit_chance*100) else this_hit
+        return this_hit + this_hit*(1 + self.attacker.crit_damage) if roll > (crit_chance*100) else this_hit
 
 
 #---------------------------------------------------------------------------------------------
@@ -167,4 +167,5 @@ class Calc:
             "Hit5": self.calc_hits(self.skill['hit5']) if self.skill['hit5'] != None else None,
             "Hit6": self.calc_hits(self.skill['hit6']) if self.skill['hit6'] != None else None
         }
+        print(data)
         return data
