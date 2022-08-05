@@ -32,7 +32,7 @@ class Attacker(object):
 
 
 class Defender(object):
-    def __init__(self, dr, dr_rate, evasion, evasion_rate, dr_combat_buffs, dr_debuffs, evasion_combat_buffs, evasion_debuffs, species="human"):
+    def __init__(self, dr, dr_rate, evasion, evasion_rate, dr_combat_buffs, dr_debuffs, evasion_combat_buffs, evasion_debuffs, class_id, species="other"):
         self.dr = dr
         self.dr_rate = dr_rate
         self.evasion = evasion
@@ -41,7 +41,7 @@ class Defender(object):
         self.dr_debuffs = dr_debuffs
         self.evasion_combat_buffs = evasion_combat_buffs
         self.evasion_debuffs = evasion_debuffs
-        self.class_id = 100
+        self.class_id = class_id
         self.species = None
         # 100 = PvE
 
@@ -127,7 +127,7 @@ class Calc:
         crit_chance = self.attacker.crit_rate + self.attacker.crit_combat_buffs + hit_in['pvp_crit_rate'] if self.defender.class_id != 100 else self.attacker.crit_rate + self.attacker.crit_combat_buffs + hit_in['pve_crit_rate']
         roll = random.randrange(0, 100)
         
-        return this_hit + this_hit*(1 + self.attacker.crit_damage) if roll > (crit_chance*100) else this_hit
+        return this_hit + this_hit*(1 + self.attacker.crit_damage) if roll < (crit_chance*100) else this_hit
 
 
 #---------------------------------------------------------------------------------------------
@@ -167,5 +167,4 @@ class Calc:
             "Hit5": self.calc_hits(self.skill['hit5']) if self.skill['hit5'] != None else None,
             "Hit6": self.calc_hits(self.skill['hit6']) if self.skill['hit6'] != None else None
         }
-        print(data)
         return data
