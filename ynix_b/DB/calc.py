@@ -114,10 +114,10 @@ class Calc:
         e_ap_low = damage_low + species_ap_low
         e_ap_high = damage_high + species_ap_high
 
-        hit_damage_low = (e_ap_low * self.skill['hit1']['damage'] + (self.t_ap*.368) + species_ap_low if e_ap_low >
+        hit_damage_low = (e_ap_low * self.skill['hit1']['damage'] + (self.t_ap) + species_ap_low if e_ap_low >
                           0 else self.t_ap + species_ap_low)*.8
 
-        hit_damage_high = (e_ap_high * self.skill['hit1']['damage'] + (self.t_ap*.368) + species_ap_high if e_ap_high >
+        hit_damage_high = (e_ap_high * self.skill['hit1']['damage'] + (self.t_ap) + species_ap_high if e_ap_high >
                            0 else self.t_ap + species_ap_high)*.8
 
         return [round(hit_damage_low), round(hit_damage_high)]
