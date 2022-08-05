@@ -2,12 +2,12 @@ from queries import get_skill_details_query
 from calc import *
 # ----------------------------------------------------------------
 demo_attacker = {
-    'ap': 635,
+    'ap': 529,  
     'aap': 0,
     'acc': 0,
     'acc_rate': 0,
     'crit_rate': .50,
-    'monster_ap': 224,
+    'monster_ap': 190,
     'kama_damage': 24,
     'demi_damage': 24,
     'human_damage': 24,

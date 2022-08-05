@@ -42,7 +42,7 @@ class Defender(object):
         self.evasion_combat_buffs = evasion_combat_buffs
         self.evasion_debuffs = evasion_debuffs
         self.class_id = class_id
-        self.species = None
+        self.species = species
         # 100 = PvE
 
 
@@ -65,13 +65,13 @@ class Calc:
         self.t_dr = defender.dr + defender.dr_combat_buffs - defender.dr_debuffs
 
         self.species_damage = 0
-        if defender.species == "human":
+        if self.defender.species == "human":
             self.species_damage = attacker.human_damage
-        elif defender.species == "demihuman":
-            self.species_damage = attacker.demihuman_damage
-        elif defender.species == "kamasylvian":
-            self.species_damage = attacker.kamasylvian_damage
-        elif defender.species == "other":
+        elif self.defender.species == "demihuman":
+            self.species_damage = attacker.demi_damage
+        elif self.defender.species == "kamasylvian":
+            self.species_damage = attacker.kama_damage
+        elif self.defender.species == "other":
             self.species_damage = attacker.other_damage
 
 #--------------------------------------------------------------------------
@@ -93,8 +93,8 @@ class Calc:
 
 #------------------------------------------------------------------------------------------------
     def calc_range(self):
-        damage_low = (self.t_ap-7)-self.t_dr
-        damage_high = (self.t_ap+7)-self.t_dr
+        damage_low = (self.t_ap-10)-self.t_dr
+        damage_high = (self.t_ap+10)-self.t_dr
         species_ap_low = 0
         species_ap_high = 0
         if damage_low > 0:
@@ -137,7 +137,7 @@ class Calc:
         hit_counter = 1
         hits = []
         while hit_counter <= hit_count:
-            damage_random = (self.t_ap-7 + random.randrange(0, 14)) - self.t_dr
+            damage_random = (self.t_ap-10 + random.randrange(0, 20)) - self.t_dr
             species_ap_random = 0
             if damage_random > 0:
                 damage_random += self.species_damage * 2

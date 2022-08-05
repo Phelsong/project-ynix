@@ -2,10 +2,10 @@ from class_data import *
 shai = Class(id=18, name="Shai", dr=23, evasion=0)
 # ----------------------------------------------------------------
 Swing_Swing = Skill(id=18_1, class_id=18, name="Swing Swing", acc_rate=.11,
-                    hit1=Hit(damage=16.69, hit_count=2, pvp_mod=0.2),
-                    hit2=Hit(damage=16.69, hit_count=2, pvp_mod=0.2),
-                    hit3=Hit(damage=16.69, hit_count=2, pvp_mod=0.2),
-                    hit4=Hit(damage=16.69, hit_count=2, pvp_mod=0.2))
+                    hit1=Hit(damage=16.63, hit_count=2, pvp_mod=0.2),
+                    hit2=Hit(damage=16.63, hit_count=2, pvp_mod=0.2),
+                    hit3=Hit(damage=16.63, hit_count=2, pvp_mod=0.2),
+                    hit4=Hit(damage=16.63, hit_count=2, pvp_mod=0.2))
 # ------------------------------------------------------------------
 Twirl = Skill(id=18_2, class_id= 18, name="Twirl", acc_rate=.09,
               hit1=Hit(damage=6.12, hit_count=26, pvp_mod=0.333),
