@@ -2,7 +2,7 @@ from typing import Optional
 import random
 from typing_extensions import Self
 # ----------------------------------------------------------------
-
+# !!!! TO DO, write logic to determin base damage as a & of basic attack damage
 class Attacker(object):
     def __init__(self, ap, aap, acc, acc_rate, crit_rate, monster_ap, kama_damage, demi_damage, human_damage, other_damage, crit_damage, back_damage, down_damage, air_damage, ap_combat_buffs, crit_combat_buffs, ap_debuffs, acc_combat_buffs, acc_debuffs, human_damage_debuffs):
         self.ap = ap
@@ -93,8 +93,8 @@ class Calc:
 
 #------------------------------------------------------------------------------------------------
     def calc_range(self):
-        damage_low = (self.t_ap-10)-self.t_dr
-        damage_high = (self.t_ap+10)-self.t_dr
+        damage_low = (self.t_ap-9)-self.t_dr
+        damage_high = (self.t_ap+9)-self.t_dr
         species_ap_low = 0
         species_ap_high = 0
         if damage_low > 0:
@@ -114,10 +114,10 @@ class Calc:
         e_ap_low = damage_low + species_ap_low
         e_ap_high = damage_high + species_ap_high
 
-        hit_damage_low = (e_ap_low * self.skill['hit1']['damage'] + self.t_ap + species_ap_low if e_ap_low >
+        hit_damage_low = (e_ap_low * self.skill['hit1']['damage'] + (self.t_ap*.368) + species_ap_low if e_ap_low >
                           0 else self.t_ap + species_ap_low)*.8
 
-        hit_damage_high = (e_ap_high * self.skill['hit1']['damage'] + self.t_ap + species_ap_high if e_ap_high >
+        hit_damage_high = (e_ap_high * self.skill['hit1']['damage'] + (self.t_ap*.368) + species_ap_high if e_ap_high >
                            0 else self.t_ap + species_ap_high)*.8
 
         return [round(hit_damage_low), round(hit_damage_high)]
@@ -137,15 +137,15 @@ class Calc:
         hit_counter = 1
         hits = []
         while hit_counter <= hit_count:
-            damage_random = (self.t_ap-10 + random.randrange(0, 20)) - self.t_dr
+            damage_random = (self.t_ap-9 + random.randrange(0, 18)) - self.t_dr
             species_ap_random = 0
             if damage_random > 0:
                 damage_random += self.species_damage * 2
             elif damage_random < 0:
                 hd_temp = (self.species_damage - abs(damage_random)/2)
-                species_ap_random = hd_temp*2 + \
-                    abs(damage_random) / \
-                    2 if hd_temp > 0 else self.species_damage/2
+                species_ap_random = hd_temp*2 + abs(damage_random)/2 if hd_temp > 0 else self.species_damage/2
+            # should return damage*2 if over DR, otherwise damage/2 if under DR, for each point
+
 
             e_ap_random = damage_random + species_ap_random
             hit_damage_random = (e_ap_random * hit_value + self.t_ap +
