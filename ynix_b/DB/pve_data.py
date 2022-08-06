@@ -14,7 +14,7 @@ class Zone:
 manshaum_forest = Zone(33, "Manshaum Forest", "Kamasylvia", 435, 0, "kamasylvian") # soft_ap cap at: 300? - damage
 # castle_ruins_elvia = Zone(34, "Elvia - Castle Ruins", "Serendia", 0, 0, "human")
 thornwood_forest = Zone(35, "Thornwood Forest", "O'dyllita", 440, 0, "kamasylvian") # soft_ap cap at: 300? - damage
-elvia_saunels = Zone(43, "Elvia - Saunels", "Calpheon", 670, 0, "demihuman")
+elvia_saunels = Zone(43, "Elvia - Saunels", "Calpheon", 665, 0, "demihuman")
 tunkuta = Zone(44, "Turos", "O'dyllita", 455, 0, "kamasylvian")
 elvia_giants = Zone(54, "Elvia - Giants", "Calpheon", 720, 0, "human")
 gyfin_underground = Zone(96, "Gyfin Underground", "Kamasylvia", 600, 0, "kamasylvian")

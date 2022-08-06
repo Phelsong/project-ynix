@@ -108,8 +108,7 @@ class Calc:
             damage_high += self.species_damage * 2
         elif damage_high < 0:
             hd_temp = (self.species_damage - abs(damage_high)/2)
-            species_ap_high = hd_temp*2 + \
-                abs(damage_high)/2 if hd_temp > 0 else self.species_damage/2
+            species_ap_high = hd_temp*2 + abs(damage_high)/2 if hd_temp > 0 else self.species_damage/2
 
         e_ap_low = damage_low + species_ap_low
         e_ap_high = damage_high + species_ap_high
@@ -148,8 +147,7 @@ class Calc:
 
 
             e_ap_random = damage_random + species_ap_random
-            hit_damage_random = (e_ap_random * hit_value + self.t_ap +
-                                 species_ap_random if e_ap_random > 0 else 0 + self.t_ap + species_ap_random)*.8
+            hit_damage_random = (e_ap_random * hit_value + self.t_ap + species_ap_random if e_ap_random > 0 else 0 + self.t_ap + species_ap_random)*.8
             
             hits.append(self.calc_if_crit(hit_in, hit_damage_random))
             hit_counter += 1
