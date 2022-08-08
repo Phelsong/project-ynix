@@ -52,7 +52,8 @@ async def get_class_skill(class_id, skill_id):
 
 @app.put("/basic_calc")
 async def basic_calc(attacker_in: dict, defender_in: dict, skill_id: tuple):
-    attacker = Attacker(attacker_in['ap'],
+    attacker = Attacker(attacker_in['class_id'],
+                        attacker_in['ap'],
                         attacker_in['aap'],
                         attacker_in['acc'],
                         attacker_in['acc_rate'],

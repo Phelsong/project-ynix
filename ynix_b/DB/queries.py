@@ -25,15 +25,19 @@ def get_zone_query(zone_id):
 
 #----------------------------------------------------------------
 def get_class_skills_query(class_id):
-    cur.execute('''SELECT * FROM skills
-                WHERE class_id = %s ; ''', (class_id,))
+    cur.execute('''SELECT * FROM class_skills
+                WHERE class_id = %s;''', (class_id,))
     return cur.fetchall()
 #----------------------------------------------------------------
 def get_skill_details_query(skill_id):
     cur.execute(''' SELECT skill_details from class_skills
-                Where skill_id = %s ;''', (skill_id,))
+                WHERE skill_id = %s::float4;''', (skill_id,))
     return cur.fetchall()
-
+#----------------------------------------------------------------
+def get_class_basic_skills_query(class_id):
+    print("called")
+    cur.execute('''SELECT * FROM class_skills WHERE skill_id = %s::float4;''', (class_id+0.1,))
+    return cur.fetchall()
 
 #----------------------------------------------------------------
 conn.commit()
