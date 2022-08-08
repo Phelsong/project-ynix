@@ -25,7 +25,7 @@ def create_tables():
                     (class_id INT PRIMARY KEY ,
                     class_name VARCHAR(150) NOT NULL)''')
     cur.execute('''CREATE TABLE class_skills
-                   (skill_id INT PRIMARY KEY,
+                   (skill_id float4 PRIMARY KEY NOT NULL,
                    "class_id" INT REFERENCES classes(class_id) NOT NULL,
                    skill_name VARCHAR(200) NOT NULL,
                    skill_details JSON);
