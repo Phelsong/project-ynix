@@ -1,8 +1,8 @@
 import json
 from __init__ import cur, conn
 from pve_data import zone_list
-from class_data import class_list
-from Shai import skill_list
+from class_data import class_list, skill_list
+
 # ----------------------------------------------------------------
 
 

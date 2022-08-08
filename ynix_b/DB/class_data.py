@@ -1,7 +1,5 @@
-# -------------------------------------------------------------------------------
-class_list = {}
-skill_list = {}
-#list variables are for seed functions
+
+
 #--------------------------------------------------------------------------------
 class Class:
     def __init__(self, id, name, dr, evasion):
@@ -41,3 +39,9 @@ class Hit:
 
 # ------------------------------------------------------------------------------
 
+class_list = {}
+skill_list = {}
+#list variables are for seed functions
+import Warrior, Sorceress, Ranger, Berserker, Tamer, Musa,Maewha,Valkyrie,Wizard,Witch,Ninja,Kuno, Dark_Knight, Striker, Mystic, Lahn, Archer, Shai, Guardian, Hashashin, Nova, Sage, Corsair, Drakania
+
+# -------------------------------------------------------------------------------
