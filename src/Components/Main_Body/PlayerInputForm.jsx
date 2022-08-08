@@ -1,52 +1,52 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {ClassDropdown} from "../index"
 //----------------------------------------------------------------
+const attackerData = {
+  "ap": 0,
+  "aap": 0, 
+  "acc": 0, 
+  "acc_rate": 0, 
+  "crit_rate": 0, 
+  "monster_ap": 0, 
+  "kama_damage": 0, 
+  "demi_damage": 0, 
+  "human_damage": 0, 
+  "other_damage": 0, 
+  "crit_damage": 0, 
+  "back_damage": 0 , 
+  "down_damage": 0, 
+  "air_damage": 0, 
+  "ap_combat_buffs": 0, 
+  "crit_combat_buffs": 0, 
+  "ap_debuffs": 0, 
+  "acc_combat_buffs": 0, 
+  "acc_debuffs": 0, 
+  "human_damage_debuffs": 0
+}
 //----------------------------------------------------------------
-const PlayerInputForm = () => {
+const PlayerInputForm = ({attackerClass, setAttackerClass}) => {
   //----------------------------------------------------------------
-  const navTo = useNavigate();
+
+
   //----------------------------------------------------------------
   return (
     <div className="player-settings-container">
       Attacker - Class
-       <ClassDropdown />
+       <ClassDropdown setAttackerClass={setAttackerClass}/>
       <form className="player-settings-form">
-        ap
-        <input type="text" />
-        aap
-        <input type="text" />
-        accuracy
-        <input type="text" />
-        accuracy rate
-        <input type="text" />
-        monster ap
-        <input type="text" />
-        kama damage
-        <input type="text" />
-        demi-human damage
-        <input type="" />
-        human damage
-        <input type="text" />
-        bonus critial damage
-        <input type="text" />
-        bonus back damage
-        <input type="text" />
-        bonus down damage
-        <input type="text" />
-        bonus air damage
-        <input type="text" />
-        ap combat buffs
-        <input type="text" />
-        ap debuffs
-        <input type="text" />
-        accuracy combat buffs
-        <input type="text" />
-        accuracy debuffs
-        <input type="text" />
+        {Object.keys(attackerData).map(item => { 
+                return <>
+                <label>{item}</label>
+                <input type="text" onChange={(e) => {
+                  attackerData[item] = Number(e.target.value)
+                  }} />
+                </>
+        })}
       </form>
     </div>
   );
 };
 //----------------------------------------------------------------
 export default PlayerInputForm;
+export { attackerData }

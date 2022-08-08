@@ -1,6 +1,4 @@
 import axios from "axios";
-// axios.defaults.baseURL = '127.0.0.1:8000';
-// axios.defaults.headers.post['Content-Type'] = 'application/json';
 //----------------------------------------------------------------
 export async function getZoneInfo(zoneId = 33) {
   const { data } = await axios
@@ -22,7 +20,7 @@ export async function getClassInfo(classId) {
 //----------------------------------------------------------------
 export async function getClassSkillList(classId) {
   //!!route not implementated yet!!
-  const { data } = await axios.get(`/class/${classId}/skil_list`)
+  const { data } = await axios.get(`/class/${classId}/skill_list`)
   .catch((err) => console.log(err));
   return data;
 }

@@ -10,7 +10,7 @@ const ZoneDropdown = ({zoneList}) => {
     <select type="dropdown" className="classList" onChange={e => e.preventDefault}>
       {zoneList.length
         ? zoneList.map(zone => (
-            <option value={zone.zone_id}>
+            <option key={zone.zone_id}>
             {zone.zone_name}
             </option>
           ))
