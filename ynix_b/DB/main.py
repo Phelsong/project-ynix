@@ -38,7 +38,8 @@ async def get_class(class_id):
 
 @app.get("/class/{class_id}/skill_list")
 def get_class_skill_list(class_id):
-    return "wip"
+    skill_list = get_class_skills_query(class_id)
+    return skill_list
 # -----------------------------------------------------------------------------
 
 
