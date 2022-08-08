@@ -1,6 +1,6 @@
 from class_data import *
 shai = Class(id=18, name="Shai", dr=23, evasion=0)
-# id = class ID _xx = pre | _3_xx = prime | _5_xx = awk | _9_xx = rabams
+# id = class ID xx = pre | 3xx = prime | 5xx = awk | 9xx = rabams
 # ----------------------------------------------------------------
 Swing_Swing = Skill(id=18.1, class_id=18, name="Swing Swing", acc_rate=.11,
                     hit1=Hit(damage=16.63, hit_count=2, pvp_mod=0.2),
@@ -23,10 +23,10 @@ One_Two_Three = Skill(id=18.4, class_id=18, name="One-Two-Three", acc_rate=.11,
 Go = Skill(id=18.5, class_id=18, name="Go!", acc_rate=.11, 
            hit1=Hit(damage=7.92, hit_count=40, pvp_mod=0.237))
 # ---------------------------------------------------------------------
-Kwik_Two = Skill(id=18.6, class_id=18, name="Kwik_Two", acc_rate=.07,
+Kwik_Two = Skill(id=18.6, class_id=18, name="Kwik Two", acc_rate=.07,
                  hit1=Hit(damage=8.82, hit_count=39, pvp_mod=0.112))
 #----------------------------------------------------------------------
-Twirl_Three = Skill(id=18.7, class_id=18, name="Twirl_Three", acc_rate=.15, 
+Twirl_Three = Skill(id=18.7, class_id=18, name="Twirl Three", acc_rate=.15, 
                     hit1=Hit(damage=8.81, hit_count=8, pvp_mod=0.2),
                     hit2=Hit(damage=8.81, hit_count=40, pvp_mod=0.2))
 #----------------------------------------------------------------------
