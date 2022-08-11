@@ -1,7 +1,7 @@
 import React from "react";
 //----------------------------------------------------------------
 //----------------------------------------------------------------
-const ClassDropdown = ({setAttackerClass}) => {
+const ClassDropdown = ({setAttackerClass} , defenderData) => {
   //----------------------------------------------------------------
   function handle(e){
     e.preventDefault();
@@ -9,6 +9,7 @@ const ClassDropdown = ({setAttackerClass}) => {
   }
   //----------------------------------------------------------------
   return (
+    <div>
     <select type="dropdown" className="classList" onChange={e => handle(e)}>
       <option value="1">Warrior</option>
       <option value="2">Ranger</option>
@@ -35,6 +36,16 @@ const ClassDropdown = ({setAttackerClass}) => {
       <option value="23">Corsair</option>
       <option value="24">Drakania</option>
     </select>
+          {Object.keys(defenderData).map(item => { 
+            return <>
+            <label>{item}</label>
+            <input type="text" onChange={(e) => {
+              defenderData[item] = Number(e.target.value)
+              }}
+              />
+            </>
+          })}
+          </div>
   );
 };
 //----------------------------------------------------------------

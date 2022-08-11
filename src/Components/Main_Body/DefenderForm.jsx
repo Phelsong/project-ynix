@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import {ClassDropdown, ZoneDropdown} from "../index"
 import { getZoneList } from "../../Requests";
@@ -21,32 +21,37 @@ const DefenderForm = () => {
   //----------------------------------------------------------------
   const navTo = useNavigate();
   const [zoneList, setZoneList] = useState([])
+  const [pveOrPvp, setPveOrPvp] = useState(false)
+
+useEffect(() => {
+  if(!zoneList.length)
+  {handleCall()}
+}, [pveOrPvp])
+
+
 
 async function handleCall() {
   const temp = await getZoneList()
   setZoneList(temp)
 }
 
+async function handleSubmit() {
+  
+}
+
   //----------------------------------------------------------------
   return (
     <div className="defender-container">
-      <form className="defender-settings-form">
-      {Object.keys(defenderData).map(item => { 
-                return <>
-                <label>{item}</label>
-                <input type="text" onChange={(e) => {
-                  defenderData[item] = Number(e.target.value)
-                  }}
-                  />
-                </>
-              })}
-      </form>
-      <form className="class-choice-form">
-        Defender - PvP
-        <ClassDropdown />
-        PvE
-        <ZoneDropdown  zoneList={zoneList}/>
-        <button onClick={e => {e.preventDefault(); handleCall()}}> get list </button>
+      <form className="defender-settings-form" onSubmit={()=> handleSubmit()}> 
+
+        { pveOrPvp ? <ClassDropdown defenderData={defenderData} />  : <ZoneDropdown  zoneList={zoneList}/>
+        }
+        <input type="checkbox" onMouseDown={ e => 
+        {e.preventDefault()
+          if(pveOrPvp === false)
+          { setPveOrPvp(true)}
+          else{ setPveOrPvp(false)}
+          }}></input>
       </form>
     </div>
   );
