@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import {ClassDropdown, ZoneDropdown} from "../index"
+import {DefenderClassDropdown, ZoneDropdown} from "../index"
 import { getZoneList } from "../../Requests";
 //----------------------------------------------------------------
 const defenderData = {
@@ -14,39 +14,57 @@ const defenderData = {
   "evasion_debuffs": 0,
   "class_id": 0,
   "species" : 0,
-  // species : 100 = PvE
+  //class_id : 100 = PvE
 }
 //----------------------------------------------------------------
-const DefenderForm = () => {
+const DefenderForm = ({setDefenderClass, pveOrPvp, setPveOrPvp}) => {
   //----------------------------------------------------------------
   const navTo = useNavigate();
   const [zoneList, setZoneList] = useState([])
+
+useEffect(() => {
+  if(!zoneList.length)
+  {handleCall()}
+}, [pveOrPvp])
+
+
 
 async function handleCall() {
   const temp = await getZoneList()
   setZoneList(temp)
 }
 
+async function handleReset() {
+  //rewrite as class instance method instead
+    defender.dr = 0
+    defender.dr_rate = 0
+    defender.evasion = 0
+    defender.evasion_rate = 0
+    defedner.dr_combat_buffs = 0
+    defender.dr_debuffs = 0
+    defender.evasion_combat_buffs = 0
+    defender.evasion_debuffs = 0
+    defender.class_id =  100
+    defender.species = 0
+    //class_id : 100 = PvE
+  
+}
+
   //----------------------------------------------------------------
   return (
     <div className="defender-container">
-      <form className="defender-settings-form">
-      {Object.keys(defenderData).map(item => { 
-                return <>
-                <label>{item}</label>
-                <input type="text" onChange={(e) => {
-                  defenderData[item] = Number(e.target.value)
-                  }}
-                  />
-                </>
-              })}
-      </form>
-      <form className="class-choice-form">
-        Defender - PvP
-        <ClassDropdown />
-        PvE
-        <ZoneDropdown  zoneList={zoneList}/>
-        <button onClick={e => {e.preventDefault(); handleCall()}}> get list </button>
+      <form className="defender-settings-form" onSubmit={()=> handleReset()}> 
+
+        { pveOrPvp ? <DefenderClassDropdown defenderData={defenderData} setDefenderClass={setDefenderClass} pveOrPvp={pveOrPvp}/>  : <ZoneDropdown  zoneList={zoneList} defenderData={defenderData}/>
+        }
+        <input type="checkbox" onMouseDown={ e => 
+        {e.preventDefault()
+          if(pveOrPvp === false)
+          { setPveOrPvp(true)}
+          else{ setPveOrPvp(false)
+          defenderData.class_id = 100}
+          handleReset()
+          }}></input>
       </form>
     </div>
   );
