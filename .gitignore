@@ -5,3 +5,4 @@ out/
 Lib
 .yarn
 .exe
+__psycache__
