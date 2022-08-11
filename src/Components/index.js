@@ -4,6 +4,7 @@ export { default as Results } from "./Main_Body/Results";
 export { default as UserSettings } from "./Main_Body/UserSettings";
 export { default as Profile } from "./Main_Body/Profile";
 export { default as ClassDropdown } from "./Main_Body/ClassDropdown";
+export { default as DefenderClassDropdown } from "./Main_Body/DefenderClassDropdown";
 export { default as SkillDropdown } from "./Main_Body/SkillDropdown";
 export { default as ZoneDropdown } from "./Main_Body/ZoneDropdown";
 export { default as PlayerInputForm } from "./Main_Body/PlayerInputForm";

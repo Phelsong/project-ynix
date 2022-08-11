@@ -13,12 +13,15 @@ const SimSettings = ({setCalcRun}) => {
   //----------------------------------------------------------------
   const navTo = useNavigate();
   const [attackerClass, setAttackerClass] = useState(1)
+  const [defenderClass, setDefenderClass] = useState(1)
   const [skillChoice, setSkillChoice] = useState(null)
+  const [pveOrPvp, setPveOrPvp] = useState(false)
  
   useEffect(() => {},[attackerClass])
   //----------------------------------------------------------------
   async function RunSim() {
     attackerData.class_id = Number(attackerClass)
+    if(pveOrPvp !== 100) {defenderData.class_id = defenderClass}
     const calcData = await runCalc(attackerData, defenderData, skillChoice)
     await setCalcRun(calcData)
     navTo("../Results");
@@ -44,7 +47,7 @@ const SimSettings = ({setCalcRun}) => {
       >
         Defender
       </button>
-      <DefenderForm className="sim-settings-form" />
+      <DefenderForm className="sim-settings-form" setDefenderClass={setDefenderClass} pveOrPvp={pveOrPvp} setPveOrPvp={setPveOrPvp}/>
       <button className="btn btn-primary" onClick={(e) => RunSim()}>
         Run
       </button>
