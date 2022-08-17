@@ -36,7 +36,7 @@ def get_skill_details_query(skill_id):
 #----------------------------------------------------------------
 def get_class_basic_skills_query(class_id):
     print("called")
-    cur.execute('''SELECT * FROM class_skills WHERE skill_id = %s::float4;''', (class_id+0.1,))
+    cur.execute('''SELECT * FROM class_skills WHERE skill_id = %s::float4;''', (class_id+0.01,))
     return cur.fetchall()
 
 #----------------------------------------------------------------

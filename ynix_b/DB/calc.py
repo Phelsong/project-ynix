@@ -173,26 +173,26 @@ class Calc:
         hits = []
         # ----------------------------------------
         while hit_counter <= hit_count:
-            damage_random = (self.t_ap-9 + random.randrange(0, 18)) - self.t_dr
-            species_ap_random = 0
-            if damage_random > 0:
-                damage_random += self.species_damage * 2
-            elif damage_random < 0:
-                hd_temp = (self.species_damage - abs(damage_random)/2)
-                species_ap_random = (hd_temp*2 + abs(damage_random)/2
+            e_ap = (self.t_ap-9 + random.randrange(0, 18)) - self.t_dr
+            species_ap = 0
+            if e_ap > 0:
+                e_ap += self.species_damage * 2
+            elif  e_ap < 0:
+                hd_temp = (self.species_damage - abs(e_ap)/2)
+                species_ap = (hd_temp*2 + abs(e_ap)/2
                                      if hd_temp > 0
                                      else self.species_damage/2)
             # -------------------------------------
             # Core output calc !!!!!!!!!!!!!!!!!!!
-            e_ap_random = damage_random + species_ap_random
-            base_damage_random = (
-                self.t_ap + species_ap_random) * (hit_value/self.attacker.basic)
-            hit_damage_random = (e_ap_random * hit_value + base_damage_random
-                                 if e_ap_random > 0
-                                 else base_damage_random
+            e_ap += species_ap
+            base_damage = (
+                self.t_ap + species_ap) * (hit_value/self.attacker.basic)
+            hit_damage = (e_ap * hit_value + base_damage
+                                 if e_ap > 0
+                                 else base_damage
                                  )*.8
             # !!!!!!!!!^^^^^^!!!!!!!!!!!!
-            hits.append(round(self.calc_if_crit(hit_in, hit_damage_random)))
+            hits.append(round(self.calc_if_crit(hit_in, hit_damage)))
             hit_counter += 1
         # -----------------------------------------
         hits.append(sum(hits))
