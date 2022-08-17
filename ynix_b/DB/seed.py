@@ -1,5 +1,6 @@
 import json
-#----------------------------------------------------------------
+
+# ----------------------------------------------------------------
 from __init__ import conn, cur
 from class_data import class_list, skill_list
 from pve_data import zone_list
@@ -18,7 +19,7 @@ def drop_tables():
                    """
     )
 
-
+#----------------------------------------------------------------
 def create_tables():
     cur.execute(
         """CREATE TABLE users 
@@ -53,7 +54,7 @@ def create_tables():
                 zone_evasion INT,
                 mob_type VARCHAR(200) NOT NULL);"""
     )
-
+#----------------------------------------------------------------
 
 def class_seed():
     for char in class_list.values():
@@ -71,7 +72,7 @@ def class_seed():
             (skill.id, skill.class_id, skill.name, details),
         )
 
-
+#----------------------------------------------------------------
 def zone_seed():
     for zone in zone_list.values():
         cur.execute(

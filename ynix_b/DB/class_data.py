@@ -1,6 +1,4 @@
-
-
-#--------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 class Class:
     def __init__(self, id, name, dr, evasion):
         self.id = id
@@ -12,10 +10,23 @@ class Class:
         # self.skills = {}
 
 
-#--------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
 # id = class ID xx = pre | 3xx = prime | 5xx = awk | 9xx = rabams
 class Skill:
-    def __init__(self, id, class_id, name, acc_rate, hit1, hit2=None, hit3=None, hit4=None, hit5=None, hit6=None, reduced_on_cd=False):
+    def __init__(
+        self,
+        id,
+        class_id,
+        name,
+        acc_rate,
+        hit1,
+        hit2=None,
+        hit3=None,
+        hit4=None,
+        hit5=None,
+        hit6=None,
+        reduced_on_cd=False,
+    ):
         self.id = id
         self.class_id = class_id
         self.name = name
@@ -26,9 +37,10 @@ class Skill:
         self.hit4 = hit4.__dict__ if hit4 is not None else None
         self.hit5 = hit5.__dict__ if hit5 is not None else None
         self.hit6 = hit6.__dict__ if hit6 is not None else None
-        self.reduced_on_cd = reduced_on_cd 
+        self.reduced_on_cd = reduced_on_cd
         skill_list.setdefault(self.name, self)
-        
+
+
 class Hit:
     def __init__(self, damage, hit_count, pvp_mod, pve_crit_rate=0, pvp_crit_rate=0):
         self.damage = damage
@@ -37,11 +49,35 @@ class Hit:
         self.pve_crit_rate = pve_crit_rate
         self.pvp_crit_rate = pvp_crit_rate
 
+
 # ------------------------------------------------------------------------------
 
 class_list = {}
 skill_list = {}
-#list variables are for seed functions
-import Warrior, Sorceress, Ranger, Berserker, Tamer, Musa,Maewha,Valkyrie,Wizard,Witch,Ninja,Kuno, Dark_Knight, Striker, Mystic, Lahn, Archer, Shai, Guardian, Hashashin, Nova, Sage, Corsair, Drakania
+import Archer
+import Berserker
+import Corsair
+import Dark_Knight
+import Drakania
+import Guardian
+import Hashashin
+import Kuno
+import Lahn
+import Maewha
+import Musa
+import Mystic
+import Ninja
+import Nova
+import Ranger
+import Sage
+import Shai
+import Sorceress
+import Striker
+import Tamer
+import Valkyrie
+import Warrior
+import Witch
+import Wizard
 
+# list variables are for seed functions
 # -------------------------------------------------------------------------------
