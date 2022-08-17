@@ -2,7 +2,7 @@ from class_data import *
 shai = Class(id=18, name="Shai", dr=23, evasion=0)
 # id = class ID xx = pre | 3xx = prime | 5xx = awk | 9xx = rabams
 # ----------------------------------------------------------------
-Swing_Swing = Skill(id=18.01, class_id=18, name="Swing Swing", acc_rate=.11,
+Swing_Swing_X = Skill(id=18.01, class_id=18, name="Swing Swing X", acc_rate=.11,
                     hit1=Hit(damage=16.63, hit_count=2, pvp_mod=0.2),
                     hit2=Hit(damage=16.63, hit_count=2, pvp_mod=0.2),                               
                     hit3=Hit(damage=16.63, hit_count=2, pvp_mod=0.2),
