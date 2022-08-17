@@ -1,4 +1,7 @@
-Logic layer and backend implementation
 
-Fast API
-Postgres
+# Logic layer and backend implementation
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **
+
+* Fast API
+* Postgres

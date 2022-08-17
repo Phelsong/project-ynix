@@ -1,0 +1,8 @@
+[tool.poetry]
+name = "ynix_b"
+version = "0.1.0"
+description = "Web Sever for Project_Ynix"
+authors = ["joshswilkinson@outlook.com"]
+
+[tool.poetry.dependencies]
+python = "*"
