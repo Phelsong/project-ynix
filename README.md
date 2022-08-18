@@ -19,3 +19,4 @@ Developer: Josh S Wilkinson - `http://www.joshsw.dev`
 ## Pkg Manager
 
 * Yarn
+* Poetry
