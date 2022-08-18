@@ -1,6 +1,6 @@
 # Project_Ynix
 
-Developer: Josh S Wilkinson - `http://joshsw.dev`
+Developer: Josh S Wilkinson - `http://www.joshsw.dev`
 
 ## _Stack:_
 
