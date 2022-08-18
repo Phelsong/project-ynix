@@ -1,8 +1,9 @@
 .env
 node_modules
-.md
+notes.md
 out/
 Lib
 .yarn
 .exe
-__psycache__
+__pycache__/
+*.pyc

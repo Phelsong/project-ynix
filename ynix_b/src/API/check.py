@@ -1,9 +1,4 @@
-import importlib
+from __init__ import test
 
-
-
-
-from ..DB.data.class_data import Shai
-
-print(Shai.shai)
+print(test)
 

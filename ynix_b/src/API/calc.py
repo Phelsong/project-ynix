@@ -1,7 +1,7 @@
 import random
 
 #------------------
-from queries import get_class_basic_skills_query
+from __init__ import get_class_basic_skills_query
 
 # ----------------------------------------------------------------
 # Find/Jump to : Attacker, Defender, Calc, calc_mean, calc_range, calc_if_crit, calc_hits, run_calc

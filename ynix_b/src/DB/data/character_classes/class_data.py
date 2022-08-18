@@ -55,11 +55,29 @@ class Hit:
 class_list = {}
 skill_list = {}
 
-from .character_classes import (Archer, Berserker, Corsair, Dark_Knight,
-                                Drakania, Guardian, Hashashin, Kuno, Lahn,
-                                Maewha, Musa, Mystic, Ninja, Nova, Ranger,
-                                Sage, Shai, Sorceress, Striker, Tamer,
-                                Valkyrie, Warrior, Witch, Wizard)
+from .Archer import *
+from .Corsair import *
+from .Dark_Knight import *
+from .Drakania import *
+from .Guardian import *
+from .Hashashin import *
+from .Kuno import *
+from .Lahn import *
+from .Maewha import *
+from .Musa import *
+from .Mystic import *
+from .Ninja import *
+from .Nova import *
+from .Ranger import *
+from .Sage import *
+from .Shai import *
+from .Sorceress import *
+from .Striker import *
+from .Tamer import *
+from .Valkyrie import *
+from .Warrior import *
+from .Witch import *
+from .Wizard import *
 
 # list variables are for seed functions
 # -------------------------------------------------------------------------------
