@@ -1,1 +1,0 @@
-uvicorn --root-path ./ynix_b/DB main:app --reload
