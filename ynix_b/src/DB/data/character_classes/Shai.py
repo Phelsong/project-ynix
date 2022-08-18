@@ -1,4 +1,5 @@
 from class_data import *
+
 shai = Class(id=18, name="Shai", dr=23, evasion=0)
 # id = class ID xx = pre | 3xx = prime | 5xx = awk | 9xx = rabams
 # ----------------------------------------------------------------

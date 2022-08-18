@@ -1,5 +1,7 @@
-from queries import get_skill_details_query
 from calc import *
+
+from ..DB.queries import get_skill_details_query
+
 # ----------------------------------------------------------------
 demo_attacker = {
     'ap': 529,  

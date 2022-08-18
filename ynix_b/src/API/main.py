@@ -1,8 +1,9 @@
 
-from calc import *
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from queries import *
+
+from ..DB.queries import *
+from .calc import *
 
 # -----------------------------------------------------------------------------
 app = FastAPI()
