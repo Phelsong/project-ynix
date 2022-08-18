@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-start": "react-scripts start",
-    "py_start": " uvicorn --root-path ./ynix_b/DB main:app --reload",
     "electron:dev": "electron .",
     "build": "react-scripts build",
     "start": "electron .",
