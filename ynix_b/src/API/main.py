@@ -1,9 +1,11 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
 
-from ..DB.queries import *
-from .calc import *
+
+from __init__ import * 
+from calc import *
 
 # -----------------------------------------------------------------------------
 app = FastAPI()
@@ -22,6 +24,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 # -----------------------------------------------------------------------------
+
 # -----------------------------------------------------------------------------
 
 
@@ -106,3 +109,8 @@ async def get_zone_info(zone_id):
     return data
 
 # ------------------------------------------------------------------------------
+
+if __name__ == "__main__":
+    config = uvicorn.Config("main:app", port=8000, log_level="info", reload=True)
+    server = uvicorn.Server(config)
+    server.run()

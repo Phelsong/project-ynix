@@ -2,7 +2,10 @@
 name = "ynix_b"
 version = "0.1.0"
 description = "Web Server for Project_Ynix"
-authors = ["joshswilkinson@outlook.com"]
+authors = ["Josh S Wilkinson", "joshswilkinson@outlook.com"]
+packages = [
+    { include = "src" }
+]
 
 [tool.poetry.dependencies]
 
@@ -11,7 +14,8 @@ pendulum = "^2.1.2"
 fastapi = "^0.79.0"
 psycopg = "^3.0.16"
 uvicorn = "^0.18.2"
+python-dotenv = "^0.20.0"
 
 [tool.poetry.scripts]
-start_dev = "uvicorn --root-path /src/API main:app --reload"
+start_dev = 'API:main.py'
 

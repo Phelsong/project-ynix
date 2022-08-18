@@ -1,6 +1,6 @@
 #/src/API INIT
 import os
-import importlib
+import importlib.util
 import sys
  
 db_path = os.path.abspath("../DB/__init__.py")
