@@ -1,9 +1,7 @@
 import json
 
 from connection import conn, cur
-
-from .data.class_data import class_list, skill_list
-from .data.PvE.pve_data import zone_list
+from data import class_list, skill_list, zone_list
 
 # ----------------------------------------------------------------
 

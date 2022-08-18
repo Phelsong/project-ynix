@@ -1,10 +1,11 @@
 import json
 
 # ----------------------------------------------------------------
-from connection import alt_cur, conn, cur
+from .connection import alt_cur, conn, cur
 
 # ----------------------------------------------------------------
 
+test = "test"
 
 def get_class_list_query():
     cur.execute("""SELECT * FROM classes""")

@@ -1,4 +1,4 @@
-from class_data import *
+from .class_data import Class, Hit, Skill
 
 # ----------------------------------------------------------------
 dark_knight = Class(id=13, name="Dark Knight", dr=0, evasion=0)
