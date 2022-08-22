@@ -11,12 +11,16 @@ class Zone:
         zone_list.setdefault(self.name, self)
 
 #--------------------------------------------------------------------------
+centaurus_herd = Zone(15, "Centaurus Herd", "Valencia", 340, 0, "demihuman")
 manshaum_forest = Zone(33, "Manshaum Forest", "Kamasylvia", 435, 0, "kamasylvian") # soft_ap cap at: 300? - damage
 # castle_ruins_elvia = Zone(34, "Elvia - Castle Ruins", "Serendia", 0, 0, "human")
-thornwood_forest = Zone(35, "Thornwood Forest", "O'dyllita", 440, 0, "kamasylvian") # soft_ap cap at: 300? - damage
-elvia_saunels = Zone(43, "Elvia - Saunels", "Calpheon", 665, 0, "demihuman")
-tunkuta = Zone(44, "Turos", "O'dyllita", 455, 0, "kamasylvian")
-elvia_giants = Zone(54, "Elvia - Giants", "Calpheon", 720, 0, "human")
+thornwood_forest = Zone(35, "Thornwood Forest", "O'dyllita", 450, 0, "kamasylvian") # soft_ap cap at: 300? - damage
+
+tunkuta = Zone(44, "Turos", "O'dyllita", 460, 0, "kamasylvian")
+elvia_fogans = Zone(65, "Elvia - Fogans", "Calpheon", 480, 0, "other")
+elvia_orcs = Zone(75, "Elvia - Orcs", "Calpheon", 640, 0, "demihuman") #lights are -130dr
+elvia_saunels = Zone(82, "Elvia - Saunels", "Calpheon", 660, 0, "demihuman")
+elvia_giants = Zone(84, "Elvia - Giants", "Calpheon", 730, 0, "human")
 gyfin_underground = Zone(96, "Gyfin Underground", "Kamasylvia", 600, 0, "kamasylvian")
 olun_valley = Zone(97, "Olun Valley", "O'dyllita", 490, 0, "kamasylvian")
 elvia_hexe_sanctuary = Zone(98, "Elvia - Hexe Sanctuary", "Calpheon", 800, 0, "other")

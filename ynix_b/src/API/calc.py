@@ -1,6 +1,6 @@
 import random
 
-#------------------
+# ------------------
 from __init__ import get_class_basic_skills_query
 
 # ----------------------------------------------------------------
@@ -272,6 +272,7 @@ class Calc:
             # Core output calc !!!!!!!!!!!!!!!!!!!
             e_ap += species_ap
             base_damage = (self.t_ap + species_ap) * (hit_value / self.attacker.basic)
+            print(e_ap)
             hit_damage = (
                 e_ap * hit_value + base_damage 
                 if e_ap > 0 
@@ -289,27 +290,20 @@ class Calc:
     def run_calc(self):
         data = {
             "Hit 1 mean": self.calc_mean(),
-            
             "Hit 1 range": self.calc_range(),
-            
             "Hit1": self.calc_hits(self.skill["hit1"]),
-            
             "Hit2": self.calc_hits(self.skill["hit2"])
             if self.skill["hit2"] != None
             else None,
-            
             "Hit3": self.calc_hits(self.skill["hit3"])
             if self.skill["hit3"] != None
             else None,
-            
             "Hit4": self.calc_hits(self.skill["hit4"])
             if self.skill["hit4"] != None
             else None,
-            
             "Hit5": self.calc_hits(self.skill["hit5"])
             if self.skill["hit5"] != None
             else None,
-            
             "Hit6": self.calc_hits(self.skill["hit6"])
             if self.skill["hit6"] != None
             else None,
