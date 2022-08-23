@@ -53,6 +53,7 @@ async function handleReset() {
   //----------------------------------------------------------------
   return (
     <div className="defender-container">
+       {/* __________________________________________________ */}
       <form className="defender-settings-form" onSubmit={()=> handleReset()}> 
 
         { pveOrPvp ? <DefenderClassDropdown defenderData={defenderData} setDefenderClass={setDefenderClass} pveOrPvp={pveOrPvp}/>  : <ZoneDropdown  zoneList={zoneList} defenderData={defenderData}/>
@@ -66,6 +67,23 @@ async function handleReset() {
           handleReset()
           }}></input>
       </form>
+      {/* __________________________________________________ */}
+      <form className="defender-form">
+        {Object.keys(defenderData).map((item) => {
+          return (
+            <>
+              <label>{item}</label>
+              <input
+                type="text"
+                onChange={(e) => {
+                  defenderData[item] = Number(e.target.value);
+                }}
+              />
+            </>
+          );
+        })}
+      </form>
+      {/* __________________________________________________ */}
     </div>
   );
 };
