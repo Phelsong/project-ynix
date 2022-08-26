@@ -1,6 +1,6 @@
 # Project_Ynix
 
-Developer: Josh S Wilkinson - `http://www.joshsw.dev`
+Developer: Josh S Wilkinson - `http://www.joshsw.dev` n\
 Backend Repo: `https://github.com/Phelsong/ynix_b`
 
 ## _Stack:_
