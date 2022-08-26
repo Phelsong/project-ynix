@@ -7,7 +7,7 @@ export { default as ClassDropdown } from "./Main_Body/ClassDropdown";
 export { default as DefenderClassDropdown } from "./Main_Body/DefenderClassDropdown";
 export { default as SkillDropdown } from "./Main_Body/SkillDropdown";
 export { default as ZoneDropdown } from "./Main_Body/ZoneDropdown";
-export { default as PlayerInputForm } from "./Main_Body/PlayerInputForm";
+export { default as PlayerInputForm } from "./Main_Body/AttackerForm";
 export { default as DefenderForm } from "./Main_Body/DefenderForm";
 export { default as Login } from "./Main_Body/Login";
 

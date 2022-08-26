@@ -10,7 +10,7 @@ const ClassDropdown = ({setAttackerClass} , defenderData) => {
   //----------------------------------------------------------------
   return (
     <div>
-    <select type="dropdown" className="classList" onChange={e => handle(e)}>
+    <select type="dropdown" className="class-list" onChange={e => handle(e)}>
       <option value="1">Warrior</option>
       <option value="2">Ranger</option>
       <option value="3">Sorceress</option>

@@ -1,7 +1,3 @@
 .results-container {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
-}
-/*# sourceMappingURL=Results.css.map */
+  flex-flow: column;
+}/*# sourceMappingURL=Results.css.map */
