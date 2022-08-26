@@ -1,3 +1,14 @@
-.home-container {
+.Home {
+  min-height: 95vh;
   flex-flow: column;
+}
+
+.home-body {
+  padding: 1rem;
+}
+
+#web-status {
+  padding: 1rem;
+  margin: 5rem;
+  border: 0.5rem solid black;
 }/*# sourceMappingURL=Home.css.map */

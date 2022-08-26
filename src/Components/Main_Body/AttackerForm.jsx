@@ -31,13 +31,13 @@ const PlayerInputForm = ({attackerClass, setAttackerClass}) => {
 
   //----------------------------------------------------------------
   return (
-    <div className="player-settings-container">
+    <div className="attacker-settings-container">
       Attacker - Class
        <ClassDropdown setAttackerClass={setAttackerClass}/>
-      <form className="player-settings-form">
+      <form className="attacker-settings-form">
         {Object.keys(attackerData).map(item => { 
                 return <>
-                <label>{item}</label>
+                <label className="attacker-settings-label">{item}</label>
                 <input type="text" onChange={(e) => {
                   attackerData[item] = Number(e.target.value)
                   }} />

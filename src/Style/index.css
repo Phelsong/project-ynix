@@ -1,19 +1,29 @@
 body {
-    display:flex;
-    box-sizing:border-box;
-    width: 100vw;
-    min-height: 100vh;
-    background-color: rgb(208, 208, 203);
+  display: flex;
+  box-sizing: border-box;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(208, 208, 203);
 }
-body * {
-    display:flex;
-    box-sizing:border-box;
-    width: 50%;
-    height: 50%;
+body *:enabled {
+  display: flex;
+  box-sizing: border-box;
+  width: 30%;
+  height: 30%;
 }
+.Main-Components {
+  min-width: 95vw;
+  min-height: 99vh;
+  padding: 1.5rem;
+  margin-left: 5rem;
+}
+
 /* ====================================== */
 @import "/node_modules/uikit/dist/css/uikit.min.css";
 @import "./ControlStyle/control_bar.css";
+@import "./HomeStyle/Home.css";
 @import "./ResultsStyle/Results.css";
 @import "./SimSettingsStyle/SimSettings.css";
-@import "./SimSettingsStyle/PlayerSettings.css"
+@import "./SimSettingsStyle/PlayerSettings.css";
+@import "./SubComponents/AttackerForm.css";
+@import "./SubComponents/ClassDrop.css";
