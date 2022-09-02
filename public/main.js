@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+// require('update-electron-app')()
 
 //----------------------------------------------------------------
 const createWindow = () => {
@@ -14,7 +15,6 @@ const createWindow = () => {
       })
       
       // win.loadURL('http://localhost:3000/')
-      // win.loadURL(`file:${path.join(__dirname, './build/index.html')}`)
       win.loadFile(path.join(__dirname, 'index.html'))
 }
 
