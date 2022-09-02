@@ -2,7 +2,7 @@
   "name": "projectynix",
   "version": "0.1.0",
   "description": "",
-  "main": "public/main.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-start": "react-scripts start",
@@ -11,11 +11,10 @@
     "start": "electron .",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "preelectron-pack": "npm run build",
     "electron-pack": "build -c.extraMetadata.main=build/Main.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Josh S Wilkinson <joshswilkinson@outlook.com>",
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
@@ -34,12 +33,10 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "electron-squirrel-startup": "^1.0.0",
-    "fs": "^0.0.1-security",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
-    "serve": "^14.0.1",
     "uikit": "^3.14.1"
   },
   "config": {
