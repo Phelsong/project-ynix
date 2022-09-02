@@ -21,7 +21,7 @@ const Home = () => {
     <div className="Home">
       <h1>Welcome to Project_Ynix!</h1>
       <h5>Alpha Version 0.1.0</h5>
-      <p className="home-body"> Someday I might right some stuff here... maybe a link to a wiki or some such. </p>
+      <p className="home-body"> This is the very first build version and is far from complete!, follow the project for updates. Version 0.1.1 will include an auto updater.</p>
        <span id="web-status"> </span>
     </div>
   );

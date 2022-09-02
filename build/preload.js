@@ -4,7 +4,7 @@
 //----------------------------------------------------------------
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
-      const element = document.getElementById(selector)
+      const element = document.getElementById('root')
       if (element) element.innerText = text
     }
   

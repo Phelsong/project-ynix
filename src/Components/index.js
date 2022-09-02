@@ -12,6 +12,6 @@ export { default as DefenderForm } from "./Main_Body/DefenderForm";
 export { default as Login } from "./Main_Body/Login";
 
 // ================== Compontent Wrappers sent to App below here =================================================
-export { default as Main } from "./Main_Body/MainWrapper";
+export { default as MainWrapper } from "./MainWrapper";
 //----------------------------------------------------------------
 export { default as ControlBar } from "./Control_Bar/ControlBar";
