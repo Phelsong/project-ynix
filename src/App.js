@@ -3,7 +3,7 @@ import UIkit from 'uikit';
 import Icons from 'uikit/dist/js/uikit-icons.min.js';
 UIkit.use(Icons);
 import "./Style/index.css"
-import {Main, ControlBar} from "./Components"
+import {MainWrapper, ControlBar} from "./Components"
 //----------------------------------------------------------------
 const App = () => {
 //----------------------------------------------------------------
@@ -13,7 +13,7 @@ const App = () => {
     return(
         <>  
             <ControlBar />
-            <Main/>
+            <MainWrapper/>
         </>
     )
 }
