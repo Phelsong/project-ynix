@@ -1,7 +1,7 @@
 {
   "name": "projectynix",
   "version": "0.1.0",
-  "description": "",
+  "description": "Black Desert Online Companion App",
   "main": "./build/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,7 +15,7 @@
   },
   "keywords": [],
   "author": "Josh S Wilkinson <joshswilkinson@outlook.com>",
-  "license": "ISC",
+  "license": "GNU AGPLv3",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
     "@electron-forge/maker-deb": "^6.0.0-beta.63",
@@ -48,7 +48,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "projectynix"
+            "name": "project_ynix"
           }
         },
         {
