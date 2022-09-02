@@ -41,23 +41,7 @@ const DefenderClassDropdown = ({
         <option value="23">Corsair</option>
         <option value="24">Drakania</option>
       </select>
-      {/* __________________________________________________ */}
-      <form className="defender-form">
-        {Object.keys(defenderData).map((item) => {
-          return (
-            <>
-              <label>{item}</label>
-              <input
-                type="text"
-                onChange={(e) => {
-                  defenderData[item] = Number(e.target.value);
-                }}
-              />
-            </>
-          );
-        })}
-      </form>
-      {/* __________________________________________________ */}
+      
     </div>
   );
 };

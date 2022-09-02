@@ -6,6 +6,7 @@
 @use "./ResultsStyle/Results.sass";
 @use "./SimSettingsStyle/SimSettings.sass";
 @use "./SimSettingStyle/PlayerSettings.sass";
+@use "./SubComponents/AttackerForm.sass";
 /* ============================================================================ */
 @use "uikit/src/scss/uikit-theme.scss";
 /*# sourceMappingURL=sassy_index.css.map */

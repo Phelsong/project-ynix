@@ -5,7 +5,7 @@ import {
   PlayerInputForm,
   DefenderForm,
 } from "../index";
-import {attackerData} from "./PlayerInputForm"
+import {attackerData} from "./AttackerForm"
 import {defenderData} from "./DefenderForm"
 import { runCalc } from "../../Requests";
 //----------------------------------------------------------------
@@ -35,7 +35,7 @@ const SimSettings = ({setCalcRun}) => {
       <button
         className="uk-button"
         type="button"
-        uk-toggle="target: .player-settings-container"
+        uk-toggle="target: .attacker-settings-container"
       >
         Player Input
       </button>

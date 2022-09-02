@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,kBAAkB,CAAC;EACf,SAAS,EAAE,MAAM;CAAG",
-    "sources": [
-        "Results.sass"
-    ],
-    "names": [],
-    "file": "Results.css"
-}
+{"version":3,"sources":["Results.sass","Results.css"],"names":[],"mappings":"AAAA;EACI,iBAAA;ACCJ","file":"Results.css"}

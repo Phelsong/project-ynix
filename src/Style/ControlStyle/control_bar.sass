@@ -1,9 +1,21 @@
 .control-bar-container
     height: 100vh
-    width: 4rem
+    width: 3rem
+    position: fixed
     flex-flow: column nowrap
-    padding: 1rem
+    padding: .5rem
+    background-color: rgb(227, 227, 227)
 
 .nav-icon
-    height: 4rem
-    width: 4rem
+    height: 3rem
+    width: 3rem
+    display: flex 
+    // mix-in overright center - Proper Sass mix-in later
+    margin: 1.2rem 0 1.2rem 0
+    align-items: center
+    justify-content: center
+    
+.nav-icon svg
+    width: 2rem
+    align-items: center
+    justify-content: center
